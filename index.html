@@ -416,6 +416,49 @@ input[type=date].field{font-size:16px}
 .pad button{height:64px;border:2px solid var(--ink);border-radius:18px;box-shadow:0 4px 0 var(--ink);font-family:var(--display);font-weight:900;font-size:32px;background:#fff;text-align:center}
 .pad button:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
 
+/* Mur photo */
+.vh{position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0}
+.board-seg{margin:0 0 12px}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.strip::-webkit-scrollbar{display:none}
+.ph{flex:0 0 62%;max-width:250px;scroll-snap-align:start;scroll-margin-left:16px;position:relative;aspect-ratio:4/5;border:2px solid var(--ink);border-radius:20px;box-shadow:0 4px 0 var(--ink);overflow:hidden;background:var(--frost);display:block;text-align:left;padding:0}
+.ph-img{position:absolute;inset:0;display:block;background:var(--frost)}
+.ph-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-load{position:absolute;inset:0;background:linear-gradient(100deg,var(--frost) 30%,#fff 50%,var(--frost) 70%);background-size:300% 100%;animation:shimmer 1.2s linear infinite}
+.ph-who{position:absolute;left:8px;right:8px;bottom:8px;display:flex;align-items:center;gap:6px;padding:4px 8px 4px 4px;border-radius:12px;background:rgba(255,255,255,.94);border:2px solid var(--ink)}
+.ph-who b{font-weight:900;font-size:13px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ph-who em{font-style:normal;font-size:11px;font-weight:800;color:var(--ink2);white-space:nowrap}
+.ph-cap{position:absolute;left:8px;right:8px;top:8px;font-size:12px;font-weight:800;color:#fff;background:rgba(20,33,61,.75);border-radius:10px;padding:5px 8px;line-height:1.25}
+.ph.add{flex-basis:44%;border:2px dashed var(--glacier);box-shadow:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:12px}
+.ph-plus{width:56px;height:56px;border-radius:18px;background:var(--glacier);color:#fff;border:2px solid var(--ink);box-shadow:0 4px 0 var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:40px;line-height:1}
+.ph.add b{font-weight:900;font-size:15px;line-height:1.15}
+.ph.add small{font-size:11px;font-weight:700;color:var(--ink2);line-height:1.25}
+.ph.add:active .ph-plus{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.ph.mine{flex-basis:44%}
+.ph-badge{position:absolute;top:8px;left:8px;background:var(--glacier);color:#fff;font-size:11px;font-weight:900;padding:3px 8px;border-radius:99px;border:2px solid var(--ink)}
+.ph.empty{flex-basis:52%;border:2px dashed var(--line2);box-shadow:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink2);text-align:center;padding:12px;font-size:30px}
+.ph.empty small{font-size:12px;font-weight:700}
+.ph-prev{position:relative;aspect-ratio:4/5;max-height:50vh;margin:12px auto;border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--frost)}
+.ph-prev>img,.ph-prev .ph-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-cta{margin:14px 0 0}
+.viewer{position:fixed;inset:0;z-index:70;background:#0B1226;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.vw-top{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;color:#fff;font-family:var(--display);font-weight:900;font-size:26px}
+.vw-x{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;color:#fff;border:2px solid rgba(255,255,255,.35)}
+.vw-x svg{width:20px;height:20px}
+.vw-track{flex:1;min-height:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior:contain}
+.vw-track::-webkit-scrollbar{display:none}
+.vw-slide{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;display:flex;justify-content:center;padding:0 16px 18px;min-height:0}
+.vw-in{width:min(100%,520px);display:flex;flex-direction:column;gap:10px;min-height:0}
+.vw-in .ph-img{position:relative;flex:1;min-height:0;border-radius:16px;overflow:hidden;background:#1B2440}
+.vw-in .ph-img img{object-fit:contain}
+.vw-in .ph-load{background:linear-gradient(100deg,#1B2440 30%,#26324F 50%,#1B2440 70%);background-size:300% 100%}
+.vw-who{display:flex;align-items:center;gap:8px;color:#fff}
+.vw-who b{font-weight:900}
+.vw-who em{font-style:normal;font-size:13px;font-weight:700;color:#AEB7C6}
+.vw-cap{color:#fff;font-weight:700;margin:0;font-size:15px}
+.vw-in .btn{align-self:flex-start;background:transparent;color:#FF9AA2;border-color:rgba(255,255,255,.35);box-shadow:none}
+@keyframes shimmer{to{background-position:-100% 0}}
+
 /* Retours */
 .toast{position:fixed;left:50%;bottom:calc(98px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:800;font-size:15px;padding:12px 18px;border-radius:16px;z-index:80;width:max-content;max-width:calc(100vw - 32px);text-align:center;animation:pop .25s cubic-bezier(.3,1.5,.5,1)}
 .toast.ok{background:var(--plus-d)}
@@ -445,6 +488,8 @@ input[type=date].field{font-size:16px}
     <div class="sheet-body"></div>
   </div>
 </div>
+<div id="viewer" class="viewer" role="dialog" aria-modal="true" aria-label="Photos du mur" hidden></div>
+<input type="file" id="ph-file" accept="image/*" class="vh" tabindex="-1" aria-hidden="true">
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 <div id="confetti" aria-hidden="true"></div>
 <script>
@@ -657,7 +702,7 @@ const DB = {
     const j = safeParse(await r.text());
     if (r.ok) return j;
     const msg = String((j && (j.message || j.error || j.hint)) || '');
-    for (const k of ['invalid_code', 'bad_pin', 'version_conflict', 'name_taken', 'id_taken', 'bad_name', 'bad_data', 'full']) if (msg.includes(k)) throw new ApiErr(k);
+    for (const k of ['invalid_code', 'bad_pin', 'version_conflict', 'name_taken', 'id_taken', 'bad_name', 'bad_data', 'bad_day', 'bad_image', 'full']) if (msg.includes(k)) throw new ApiErr(k);
     if (r.status === 404 || /Could not find the function|schema cache/i.test(msg)) throw new ApiErr('setup');
     if (r.status === 401 || /api key|apikey|JWT/i.test(msg)) throw new ApiErr('apikey');
     throw new ApiErr('http', msg || r.status);
@@ -674,6 +719,10 @@ const DB = {
   login: (id, pinHash) => DB.rpc('wa_login', { code: S.token, pid: id, ppin: pinHash }),
   create: (data, pinHash) => DB.rpc('wa_create', { code: S.token, pid: data.id, ppin: pinHash, pdata: data }),
   save: (data, ver) => DB.rpc('wa_save', { code: S.token, pid: data.id, ppin: S.pinHash, pdata: data, pver: ver ?? null }),
+  photoList: since => DB.rpc('wa_photo_list', { code: S.token, since }),
+  photoGet: ids => DB.rpc('wa_photo_get', { code: S.token, ids }),
+  photoSave: (day, img, caption) => DB.rpc('wa_photo_save', { code: S.token, pid: S.me, ppin: S.pinHash, pday: day, pimg: img, pcaption: caption || null }),
+  photoDelete: day => DB.rpc('wa_photo_delete', { code: S.token, pid: S.me, ppin: S.pinHash, pday: day }),
 };
 
 function mergePlayer(remote, local) {
@@ -717,6 +766,8 @@ function apiMessage(e) {
     case 'id_taken': return 'Petit conflit d’identifiant, réessaie.';
     case 'bad_name': return 'Le prénom doit faire entre 2 et 20 caractères.';
     case 'bad_data': return 'Données refusées par la base.';
+    case 'bad_day': return 'La photo doit être celle du jour.';
+    case 'bad_image': return 'Image refusée : réessaie avec une autre photo.';
     case 'full': return 'Le challenge a atteint son nombre maximum de joueurs.';
     case 'network': return 'Pas de connexion. Vérifie ton réseau puis réessaie.';
     case 'conflict': return 'Enregistrement en conflit avec un autre appareil. Réessaie.';
@@ -1041,7 +1092,7 @@ function headEl(p, cls = '') {
 
 /* ---------- Moteur de score ---------- */
 const S = {
-  token: null, me: null, pinHash: null, players: {}, vers: {}, C: null, view: 'home',
+  token: null, me: null, pinHash: null, players: {}, vers: {}, C: null, board: 'global', photos: [], photoImg: {}, phLoading: new Set(), photosReady: null, phDraft: null, view: 'home',
   logDate: null, draft: null, saving: false, ed: null, pin: null, gateStep: null, offline: false,
 };
 
@@ -1427,14 +1478,16 @@ function viewHome() {
   let h = heroBlock(phase);
   if (S.offline) h = `<p class="offline">Hors ligne : dernières données connues.</p>` + h;
   if (phase === 'before') {
+    h += photoStrip();
     h += secTitle('Comment on marque') + rulesMini();
     h += gageCard();
   } else {
+    h += photoStrip();
     const maxAbs = Math.max(1, ...C.list.map(r => Math.max(r.plus, r.minus)));
-    h += secTitle('Classement général', `${C.list.length} joueur${C.list.length > 1 ? 's' : ''}`);
-    h += `<div class="board">${C.list.map(r => rowGlobal(r, maxAbs)).join('')}</div>`;
-    const w = Math.min(C.cw, NWEEKS);
-    h += secTitle(weekName(w), rangeLabel(...weekRange(w))) + weekBoard(w);
+    const w = Math.min(C.cw, NWEEKS), isWeek = S.board === 'week';
+    h += secTitle('Classement', isWeek ? rangeLabel(...weekRange(w)) : `${C.list.length} joueur${C.list.length > 1 ? 's' : ''}`);
+    h += `<div class="seg board-seg"><button class="${isWeek ? '' : 'on'}" data-act="board" data-v="global">Général</button><button class="${isWeek ? 'on' : ''}" data-act="board" data-v="week">${weekName(w)}</button></div>`;
+    h += isWeek ? weekBoard(w) : `<div class="board">${C.list.map(r => rowGlobal(r, maxAbs)).join('')}</div>`;
     if (phase === 'during' || C.W[FULL_WEEKS].final) h += gageCard();
     h += secTitle('Course aux points', 'cumul par jour') + chartCard();
   }
@@ -1479,6 +1532,7 @@ function viewLog() {
   ${secTitle('Ce qui coûte', 'coche si c’est arrivé')}
   <div class="tiles">${MALUS.map(it => tile(it, 'm', S.draft.m.has(it.key))).join('')}</div>
   <div class="savebar"><button class="btn block ${dirty ? '' : 'ghost'}" data-act="saveday" ${S.saving || !dirty ? 'disabled' : ''}>${!dirty && !S.saving ? ICON.check : ''}${btnTxt}</button>
+  ${photoCta()}
   <p class="muted c">${savedAt ? `Enregistrée le ${savedAt.toLocaleDateString('fr-FR')} à ${savedAt.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}` : 'Pas encore enregistrée'}</p></div>
   ${secTitle(weekName(w), rangeLabel(...weekRange(w)))}
   <div class="card myweek">${weekStrip(r, w, true)}<div class="mw-tot"><span>Total de la semaine</span><b class="${r.weeks[w] < 0 ? 'neg' : ''}">${fmtN(r.weeks[w])}</b></div></div>
@@ -1813,8 +1867,10 @@ function updateChrome() {
 const VIEWS = { home: viewHome, log: viewLog, records: viewRecords, trophies: viewTrophies, me: viewMe };
 function renderView() {
   if (!S.me || !meP()) return;
+  const sl = $('#strip') ? $('#strip').scrollLeft : 0;
   $('#main').innerHTML = `<div class="view v-${S.view}">${VIEWS[S.view]()}</div>`;
   updateChrome();
+  const st = $('#strip'); if (st) { st.scrollLeft = sl; hydrateStrip(); }
 }
 function go(v) {
   if (v === 'log') { S.logDate = null; S.draft = null; }
@@ -1840,7 +1896,7 @@ async function load() {
 async function start() {
   if (!configReady()) return gate('error', apiMessage({ kind: 'config' }));
   gate('loading');
-  try { await load(); }
+  try { await load(); await loadPhotos(); }
   catch (e) {
     if (e.kind === 'invalid_code') { lsDel(LS.token); S.token = null; return gate('token', apiMessage(e)); }
     return gate('error', apiMessage(e));
@@ -1858,7 +1914,7 @@ async function refresh(manual) {
   if (S.refreshing || S.saving) return;
   S.refreshing = true;
   try {
-    await load();
+    await load(); await loadPhotos();
     if (!S.players[S.me]) { forgetMe(); gate('welcome'); return; }
     S.C = compute();
     const ic = document.querySelector('.meic'); if (ic) ic.innerHTML = headEl(meP());
@@ -2006,6 +2062,13 @@ const ACT = {
   'g-back': el => { if (el.dataset.to === 'create' && S.ed) { S.pin = null; } gate(el.dataset.to); },
   'g-next': () => gNext(),
   pin: el => pinPress(el.dataset.v),
+  board: el => { S.board = el.dataset.v; renderView(); },
+  'ph-add': () => pickPhoto(),
+  'ph-mine': () => sheetMine(),
+  'ph-open': el => openViewer(+el.dataset.i),
+  'ph-publish': () => publishPhoto(),
+  'ph-del': el => deletePhoto(el.dataset.d),
+  'vw-close': () => closeViewer(),
 };
 document.addEventListener('click', e => {
   const el = e.target.closest('[data-act]');
@@ -2015,7 +2078,8 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('input', e => { if (e.target.id === 'ed-name' && S.ed) S.ed.name = e.target.value; });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && !$('#sheet').hidden) closeSheet();
+  if (e.key === 'Escape' && !$('#viewer').hidden) closeViewer();
+  else if (e.key === 'Escape' && !$('#sheet').hidden) closeSheet();
   const onPad = S.pin && !$('#gate').hidden && (S.gateStep === 'login' || S.gateStep === 'setpin');
   if (onPad && /^[0-9]$/.test(e.key)) pinPress(e.key);
   if (onPad && e.key === 'Backspace') pinPress('del');
@@ -2032,6 +2096,164 @@ function boot() {
   if (!S.token) return gate('token');
   start();
 }
+
+/* ---------- Mur photo ---------- */
+const PHOTO_DAYS = 7;
+const dayLabel = d => { const n = idxOf(today()) - idxOf(d); return n === 0 ? 'Aujourd’hui' : n === 1 ? 'Hier' : frShort(d); };
+const visiblePhotos = () => S.photos.filter(f => S.players[f.pid]);
+const myPhotoToday = () => visiblePhotos().find(f => f.pid === S.me && f.day === today());
+
+async function loadPhotos() {
+  try {
+    const d = parseYmd(today()); d.setDate(d.getDate() - (PHOTO_DAYS - 1));
+    const rows = await DB.photoList(ymd(d));
+    S.photos = (Array.isArray(rows) ? rows : []).filter(r => r && r.id && r.pid && r.day);
+    S.photosReady = true;
+  } catch (e) {
+    if (e.kind === 'setup') S.photosReady = false;
+  }
+}
+
+function phImg(f) {
+  const src = S.photoImg[f.id];
+  return `<span class="ph-img" data-pid="${f.id}">${src ? `<img src="${src}" alt="">` : '<i class="ph-load"></i>'}</span>`;
+}
+function photoStrip() {
+  if (!S.photosReady) return '';
+  const list = visiblePhotos(), mine = myPhotoToday();
+  const first = mine
+    ? `<button class="ph mine" data-act="ph-mine">${phImg(mine)}<span class="ph-badge">Ta photo</span><span class="ph-who"><b>Modifier</b></span></button>`
+    : `<button class="ph add" data-act="ph-add"><span class="ph-plus">+</span><b>Ma photo du jour</b><small>Une par jour, visible par tous les joueurs</small></button>`;
+  const cards = list.map((f, i) => {
+    if (f === mine) return '';
+    const p = S.players[f.pid];
+    return `<button class="ph" data-act="ph-open" data-i="${i}">${phImg(f)}${f.caption ? `<span class="ph-cap">${esc(f.caption)}</span>` : ''}<span class="ph-who">${headEl(p, 'xs')}<b>${esc(p.name)}</b><em>${dayLabel(f.day)}</em></span></button>`;
+  }).join('');
+  const n = list.length;
+  return secTitle('Le mur', n ? `${n} photo${n > 1 ? 's' : ''} sur 7 jours` : 'poste la première')
+    + `<div class="strip" id="strip">${first}${cards || '<div class="ph empty"><span>📸</span><small>Les photos des autres joueurs apparaîtront ici</small></div>'}</div>`;
+}
+function photoCta() {
+  if (!S.photosReady) return '';
+  const mine = myPhotoToday();
+  return `<div class="invite ph-cta"><div><b>${mine ? 'Photo du jour publiée' : 'Ta photo du jour'}</b><span>${mine ? 'Elle est visible sur le mur de l’accueil.' : 'Montre ta séance aux autres, une photo par jour.'}</span></div><button class="btn sm" data-act="${mine ? 'ph-mine' : 'ph-add'}">${mine ? 'Voir' : 'Ajouter'}</button></div>`;
+}
+
+/* Chargement des images à la demande (par lots de 12) */
+const phQueue = new Set(); let phTimer = null, phObserver = null;
+function requestImgs(ids) {
+  ids.forEach(id => { if (id && !S.photoImg[id] && !S.phLoading.has(id)) phQueue.add(id); });
+  clearTimeout(phTimer); phTimer = setTimeout(flushImgs, 60);
+}
+async function flushImgs() {
+  const ids = [...phQueue].slice(0, 12);
+  if (!ids.length) return;
+  ids.forEach(id => { phQueue.delete(id); S.phLoading.add(id); });
+  try { const rows = await DB.photoGet(ids); (rows || []).forEach(r => { S.photoImg[r.id] = r.img; paintImg(r.id); }); }
+  catch (e) { /* réessai au prochain affichage */ }
+  finally { ids.forEach(id => S.phLoading.delete(id)); if (phQueue.size) flushImgs(); }
+}
+function paintImg(id) {
+  document.querySelectorAll(`[data-pid="${id}"]`).forEach(el => { if (!el.querySelector('img')) el.innerHTML = `<img src="${S.photoImg[id]}" alt="">`; });
+}
+function hydrateStrip() {
+  const strip = $('#strip'); if (!strip) return;
+  if (phObserver) phObserver.disconnect();
+  const pending = [...strip.querySelectorAll('.ph-img')].filter(el => !el.querySelector('img'));
+  if (!pending.length) return;
+  if ('IntersectionObserver' in window) {
+    phObserver = new IntersectionObserver(entries => {
+      const ids = entries.filter(e => e.isIntersecting).map(e => +e.target.dataset.pid);
+      if (ids.length) requestImgs(ids);
+    }, { root: strip, rootMargin: '0px 400px 0px 400px' });
+    pending.forEach(el => phObserver.observe(el));
+  } else requestImgs(pending.slice(0, 6).map(el => +el.dataset.pid));
+}
+
+/* Ajout */
+function pickPhoto() { const inp = $('#ph-file'); inp.value = ''; inp.click(); }
+async function compressImage(file) {
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
+    const max = 720, r = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+    const w = Math.max(1, Math.round(img.naturalWidth * r)), h = Math.max(1, Math.round(img.naturalHeight * r));
+    const c = document.createElement('canvas'); c.width = w; c.height = h;
+    const ctx = c.getContext('2d'); ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, w, h); ctx.drawImage(img, 0, 0, w, h);
+    let q = 0.78, out = c.toDataURL('image/jpeg', q);
+    while (out.length > 220000 && q > 0.35) { q -= 0.1; out = c.toDataURL('image/jpeg', q); }
+    if (!out.startsWith('data:image/jpeg') || out.length > 390000) throw new Error('size');
+    return out;
+  } finally { URL.revokeObjectURL(url); }
+}
+document.addEventListener('change', async e => {
+  if (e.target.id !== 'ph-file') return;
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  try { S.phDraft = await compressImage(file); sheetPhotoPreview(); }
+  catch (err) { toast('Impossible de lire cette image, essaie une autre photo', 'err'); }
+});
+function sheetPhotoPreview() {
+  openSheet(`<h2 class="h2">Ta photo du jour</h2><p class="muted">${frLong(today())}. Visible par tous les joueurs du challenge.</p>
+    <div class="ph-prev"><img src="${S.phDraft}" alt=""></div>
+    <label class="lbl-s" for="ph-cap">Légende <small>(facultatif)</small></label>
+    <input class="field" id="ph-cap" maxlength="80" placeholder="ex. Séance jambes, 10 km sous la neige">
+    <button class="btn block" data-act="ph-publish">Publier</button>
+    <button class="btn ghost block" data-act="ph-add">Choisir une autre photo</button>`);
+}
+async function publishPhoto() {
+  if (!S.phDraft) return;
+  const btn = document.querySelector('[data-act="ph-publish"]');
+  if (btn) { btn.disabled = true; btn.textContent = 'Publication…'; }
+  try {
+    const id = await DB.photoSave(today(), S.phDraft, (($('#ph-cap') || {}).value || '').trim());
+    if (id) S.photoImg[id] = S.phDraft;
+    S.phDraft = null; closeSheet();
+    await loadPhotos(); renderView();
+    toast('Photo publiée sur le mur 📸', 'ok'); confetti(40);
+  } catch (e) {
+    if (btn && btn.isConnected) { btn.disabled = false; btn.textContent = 'Publier'; }
+    handleSaveError(e);
+  }
+}
+function sheetMine() {
+  const mine = myPhotoToday();
+  if (!mine) return pickPhoto();
+  openSheet(`<h2 class="h2">Ta photo du jour</h2><div class="ph-prev">${phImg(mine)}</div>${mine.caption ? `<p class="muted c">${esc(mine.caption)}</p>` : ''}
+    <button class="btn block" data-act="ph-add">Remplacer la photo</button>
+    <button class="btn ghost danger block" data-act="ph-del" data-d="${mine.day}">Supprimer</button>`);
+  requestImgs([mine.id]);
+}
+async function deletePhoto(day) {
+  if (!window.confirm('Supprimer ta photo ?')) return;
+  try { await DB.photoDelete(day); closeSheet(); closeViewer(); await loadPhotos(); renderView(); toast('Photo supprimée'); }
+  catch (e) { handleSaveError(e); }
+}
+
+/* Visionneuse plein écran (glisser pour passer d'une photo à l'autre) */
+function openViewer(i) {
+  const list = visiblePhotos(); if (!list.length) return;
+  const v = $('#viewer');
+  v.innerHTML = `<div class="vw-top"><span>Le mur</span><button class="vw-x" data-act="vw-close" aria-label="Fermer">${ICON.close}</button></div>
+    <div class="vw-track" id="vw-track">${list.map(f => {
+      const p = S.players[f.pid];
+      return `<div class="vw-slide"><div class="vw-in"><div class="vw-who">${headEl(p, 'xs')}<b>${esc(p.name)}</b><em>${dayLabel(f.day)}</em></div>${phImg(f)}
+        ${f.caption ? `<p class="vw-cap">${esc(f.caption)}</p>` : ''}${f.pid === S.me ? `<button class="btn ghost sm danger" data-act="ph-del" data-d="${f.day}">Supprimer ma photo</button>` : ''}</div></div>`;
+    }).join('')}</div>`;
+  v.hidden = false; document.body.classList.add('noscroll');
+  const tr = $('#vw-track');
+  tr.scrollLeft = Math.max(0, i) * tr.clientWidth;
+  const around = () => { const k = Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth)); requestImgs(list.slice(Math.max(0, k - 1), k + 3).map(f => f.id)); };
+  around();
+  tr.addEventListener('scroll', () => { clearTimeout(tr._t); tr._t = setTimeout(around, 80); }, { passive: true });
+}
+function closeViewer() {
+  const v = $('#viewer'); if (v.hidden) return;
+  v.hidden = true; v.innerHTML = '';
+  if ($('#sheet').hidden) document.body.classList.remove('noscroll');
+}
+
+/* Démarrage */
 if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
 if (window.__WA_DEBUG) window.__WA = { S, compute, gageFor, GAGE_ORDER, weekRange, dateAt, idxOf };
 boot();
