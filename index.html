@@ -459,6 +459,114 @@ input[type=date].field{font-size:16px}
 .vw-in .btn{align-self:flex-start;background:transparent;color:#FF9AA2;border-color:rgba(255,255,255,.35);box-shadow:none}
 @keyframes shimmer{to{background-position:-100% 0}}
 
+/* Sélecteur de jours (Ma journée) */
+.daypick{display:flex;gap:6px;overflow-x:auto;margin:4px -16px 10px;padding:4px 16px 6px;scrollbar-width:none}
+.daypick::-webkit-scrollbar{display:none}
+.dp{flex:0 0 auto;min-width:52px;display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 6px 5px;border:2px solid var(--line2);border-radius:14px;background:#fff;box-shadow:0 3px 0 var(--line2);text-align:center}
+.dp small{font-size:11px;font-weight:900;color:var(--ink2)}
+.dp b{font-family:var(--display);font-weight:900;font-size:24px;line-height:1}
+.dp i{font-style:normal;font-size:11px;font-weight:900;height:13px;color:var(--plus-d)}
+.dp.done{border-color:var(--plus);box-shadow:0 3px 0 var(--plus)}
+.dp.on{background:var(--ink);border-color:var(--ink);box-shadow:0 3px 0 var(--ink)}
+.dp.on small,.dp.on b{color:#fff}.dp.on i{color:#7BE3A6}
+.log-date{margin:0 0 12px}
+
+/* Gage mis en avant */
+.linkbtn{font-family:var(--body);font-size:13px;font-weight:900;color:var(--glacier);text-decoration:underline;text-underline-offset:3px}
+.gspot{display:grid;grid-template-columns:42% 1fr;border:2px solid var(--ink);border-radius:22px;box-shadow:0 5px 0 var(--ink);overflow:hidden;background:#fff}
+.gs-l{background:var(--minus-bg);padding:12px 10px;display:flex;flex-direction:column;align-items:center;text-align:center;border-right:2px solid var(--ink)}
+.gs-r{padding:12px 14px;display:flex;flex-direction:column;gap:6px;background:#FFF6DB}
+.gs-tag{align-self:flex-start;font-size:11px;font-weight:900;padding:3px 8px;border-radius:99px;background:var(--minus);color:#fff;border:2px solid var(--ink)}
+.gs-l .gs-tag{align-self:center}
+.gs-tag.dark{background:var(--ink)}
+.gs-who{display:flex;justify-content:center;margin:6px 0 2px}
+.gs-av{--c:#F04452;width:78px;position:relative}
+.gs-av::before{content:"";position:absolute;left:8%;right:8%;top:6%;aspect-ratio:1;border-radius:50%;background:var(--c);border:2px solid var(--ink)}
+.gs-av svg{position:relative;width:100%;height:auto;display:block}
+.gs-who .gs-av+.gs-av{margin-left:-18px}
+.gs-empty{font-size:56px;margin:8px 0}
+.gs-name{font-weight:900;font-size:15px;line-height:1.15}
+.gs-pts{font-size:12px;font-weight:800;color:var(--minus-d)}
+.gs-gage{font-weight:900;font-size:16px;line-height:1.25;margin:2px 0}
+.gs-meta{font-size:12px;font-weight:800;color:var(--ink2)}
+.gprev{margin-top:12px;padding:12px 14px}
+.gp-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.gp-h b{font-family:var(--display);font-size:22px;font-weight:900}
+.gp-h span{font-size:12px;font-weight:800;color:var(--ink2)}
+.gp-g{font-weight:800;font-size:14px;margin:4px 0 8px;color:var(--ink2)}
+.gp-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:2px solid var(--line)}
+.gp-row .avh{width:38px;height:38px}
+.gp-n{flex:1;min-width:0;display:flex;flex-direction:column}
+.gp-n b{font-weight:900}.gp-n small{font-size:12px;font-weight:700;color:var(--ink2)}
+.gi.cur{border-color:var(--ink);background:#FFF6DB}
+.gw{display:block;font-size:12px;font-weight:900;color:var(--glacier);margin-bottom:2px}
+
+/* Stats et détail des journées */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.st{border:2px solid var(--ink);border-radius:14px;padding:8px 10px;background:#fff;display:flex;flex-direction:column;gap:2px}
+.st.wide{grid-column:1/-1}
+.st small{font-size:11px;font-weight:900;color:var(--ink2)}
+.st b{font-family:var(--display);font-weight:900;font-size:26px;line-height:1}
+.st b i{font-style:normal;font-size:16px;color:var(--ink3)}
+.st em{font-style:normal;font-size:12px;font-weight:900;color:var(--plus-d);align-self:flex-end;margin-top:-18px}
+.sbar{display:block;height:8px;border-radius:8px;background:var(--line);overflow:hidden;margin-top:4px}
+.sbar i{display:block;height:100%;background:var(--plus)}
+.mal{display:flex;justify-content:space-between;gap:6px;margin-top:4px}
+.mal span{display:flex;align-items:center;gap:3px;font-size:18px}
+.mal b{font-family:var(--display);font-size:20px;color:var(--minus-d)}
+.chips.wk{gap:6px;margin-bottom:6px}
+.chips.wk .chip{padding:6px 11px;font-size:13px}
+.dd-list{border:2px solid var(--ink);border-radius:16px;overflow:hidden}
+.dd{display:flex;align-items:center;gap:10px;padding:8px 12px;border-top:2px solid var(--line);min-height:44px}
+.dd:first-child{border-top:0}
+.dd-d{width:50px;font-weight:900;font-size:13px;color:var(--ink2);text-transform:capitalize}
+.dd-i{flex:1;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.dd-i em{font-style:normal;font-size:12px;font-weight:700;color:var(--ink3)}
+.dd-i em.red{color:var(--minus-d);font-weight:900}
+.ib,.im{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;font-size:17px}
+.ib{background:var(--plus-bg);border:2px solid var(--plus)}
+.im{background:var(--minus-bg);border:2px solid var(--minus)}
+.dd-s{font-family:var(--display);font-weight:900;font-size:22px;min-width:34px;text-align:right}
+.dd-s.pos{color:var(--plus-d)}.dd-s.neg{color:var(--minus-d)}
+
+/* Éléments à débloquer */
+.unl{display:flex;flex-direction:column;gap:8px}
+.ul{display:flex;align-items:center;gap:10px;padding:6px 10px 6px 6px;border:2px solid var(--line2);border-radius:14px;background:#fff}
+.ul.ok{border-color:var(--plus);background:var(--plus-bg)}
+.ul-av{width:44px;height:44px;flex:none;border-radius:10px;background:var(--frost);overflow:hidden}
+.ul-av svg{width:100%;height:100%;display:block}
+.ul:not(.ok) .ul-av svg{filter:grayscale(1);opacity:.45}
+.ul-t{flex:1;min-width:0;display:flex;flex-direction:column}
+.ul-t b{font-weight:900;font-size:14px}.ul-t small{font-size:12px;font-weight:700;color:var(--ink2)}
+.ul-s{font-size:18px}
+.opt{position:relative}
+.opt.locked svg{filter:grayscale(1);opacity:.35}
+.opt.locked span{color:var(--ink3)}
+.opt .lk{position:absolute;top:4px;right:4px;font-style:normal;font-size:14px}
+
+/* Réactions et commentaires */
+.ph-soc{position:absolute;right:8px;bottom:56px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:900;color:var(--ink);background:rgba(255,255,255,.94);border:2px solid var(--ink);border-radius:99px;padding:3px 8px}
+.ph-soc i{width:2px;height:12px;background:var(--line2)}
+.vw-soc{flex:none}
+.rxs{display:flex;gap:6px;flex-wrap:wrap}
+.rx{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:99px;border:2px solid rgba(255,255,255,.25);font-size:18px;color:#fff;background:rgba(255,255,255,.06)}
+.rx b{font-size:13px;font-weight:900}
+.rx.on{background:var(--glacier);border-color:#fff}
+.cms{max-height:22vh;overflow-y:auto;margin:8px 0;display:flex;flex-direction:column;gap:6px}
+.cm{display:flex;align-items:flex-start;gap:8px;color:#fff}
+.cm .avh{border-color:#fff}
+.cm-b{flex:1;min-width:0;background:rgba(255,255,255,.08);border-radius:12px;padding:5px 10px}
+.cm-b b{font-size:12px;font-weight:900;color:#AEB7C6}
+.cm-b p{margin:1px 0 0;font-size:14px;font-weight:600;overflow-wrap:anywhere}
+.cm-x{color:#FF9AA2;font-size:20px;font-weight:900;padding:0 4px}
+.cm-empty{color:#7E8AA8;font-size:13px;font-weight:700;margin:2px 0}
+.cm-new{display:flex;gap:6px}
+.cm-in{flex:1;min-width:0;height:42px;border-radius:12px;border:2px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;padding:0 12px;font-weight:700;font-size:16px}
+.cm-in::placeholder{color:#7E8AA8}
+.cm-send{height:42px;padding:0 14px;border-radius:12px;background:var(--glacier);color:#fff;font-weight:900;border:2px solid #fff}
+.vw-in .ph-img{min-height:34vh}
+.ph-prev.contain img{object-fit:contain;background:var(--frost)}
+
 /* Retours */
 .toast{position:fixed;left:50%;bottom:calc(98px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:800;font-size:15px;padding:12px 18px;border-radius:16px;z-index:80;width:max-content;max-width:calc(100vw - 32px);text-align:center;animation:pop .25s cubic-bezier(.3,1.5,.5,1)}
 .toast.ok{background:var(--plus-d)}
@@ -570,6 +678,23 @@ const GAGES = [
   { t: '20 minutes de mobilité ou de stretching chaque soir pendant 5 jours', k: 'Récup', l: 1 },
 ];
 
+/* Gage fixé pour chaque semaine (S1 à S13), réalisé par la lanterne rouge la semaine suivante */
+const GAGE_PLAN = [
+  { t: '100 burpees en une seule séance', k: 'Full body', l: 3 },
+  { t: '10 minutes de planche cumulées en une seule séance', k: 'Gainage', l: 2 },
+  { t: 'Courir 5 km avec un départ à 5h00 (trace montre ou Strava avec l’heure)', k: 'Cardio', l: 3 },
+  { t: '200 pompes dans la journée, fractionnement libre', k: 'Force', l: 2 },
+  { t: 'Douche froide de 3 minutes chaque matin pendant 5 jours', k: 'Mental', l: 2 },
+  { t: '1 000 sauts à la corde', k: 'Cardio', l: 2 },
+  { t: '300 squats en une seule séance', k: 'Jambes', l: 2 },
+  { t: 'Murph allégé : 1 km de course, 50 tractions, 100 pompes, 150 squats, 1 km de course', k: 'Full body', l: 3 },
+  { t: 'Réveil à 5h30 et séance terminée avant 7h, 3 jours dans la semaine', k: 'Discipline', l: 3 },
+  { t: 'Deck of cards : les 52 cartes, cœur = pompes, pique = squats, trèfle = burpees, carreau = abdos, valeur de la carte = répétitions', k: 'Full body', l: 3 },
+  { t: 'Test de Cooper : courir 12 minutes le plus loin possible, résultat publié', k: 'Cardio', l: 2 },
+  { t: 'EMOM 20 minutes : 5 burpees + 10 squats au début de chaque minute', k: 'Cardio', l: 3 },
+  { t: 'Faire la séance imposée par le n°1 du classement (1 heure max)', k: 'Social', l: 3 },
+];
+
 const BADGES = [
   { key: 'first',    em: '🌱', name: 'Premier pas',       desc: 'Première journée enregistrée' },
   { key: 'streak7',  em: '🔥', name: 'Série de feu',      desc: '7 jours d’affilée avec du sport' },
@@ -671,7 +796,7 @@ const GAGE_ORDER = (() => {
   for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; }
   return arr;
 })();
-const gageFor = w => GAGES[GAGE_ORDER[(w - 1) % GAGE_ORDER.length]];
+const gageFor = w => GAGE_PLAN[w - 1] || GAGE_PLAN[GAGE_PLAN.length - 1];
 const flames = l => '🔥'.repeat(l);
 
 /* ---------- Encodage ---------- */
@@ -723,6 +848,13 @@ const DB = {
   photoGet: ids => DB.rpc('wa_photo_get', { code: S.token, ids }),
   photoSave: (day, img, caption) => DB.rpc('wa_photo_save', { code: S.token, pid: S.me, ppin: S.pinHash, pday: day, pimg: img, pcaption: caption || null }),
   photoDelete: day => DB.rpc('wa_photo_delete', { code: S.token, pid: S.me, ppin: S.pinHash, pday: day }),
+  social: since => DB.rpc('wa_social', { code: S.token, since }),
+  react: (photo, emoji) => DB.rpc('wa_react', { code: S.token, pid: S.me, ppin: S.pinHash, pphoto: photo, pemoji: emoji }),
+  comment: (photo, body) => DB.rpc('wa_comment', { code: S.token, pid: S.me, ppin: S.pinHash, pphoto: photo, pbody: body }),
+  commentDelete: id => DB.rpc('wa_comment_delete', { code: S.token, pid: S.me, ppin: S.pinHash, pcomment: id }),
+  proofList: () => DB.rpc('wa_proof_list', { code: S.token }),
+  proofGet: (pid, week) => DB.rpc('wa_proof_get', { code: S.token, ppid: pid, pweek: week }),
+  proofSave: (week, img) => DB.rpc('wa_proof_save', { code: S.token, pid: S.me, ppin: S.pinHash, pweek: week, pimg: img }),
 };
 
 function mergePlayer(remote, local) {
@@ -903,11 +1035,12 @@ const TETES = {
   ninja: { label: 'Ninja', d: ['..aaaaaaaaaaaaaaaa..', '..aaaaaaggggaaaaaaaa', '..AAAAAAAAAAAAAAAAaA', '..................aA', '...................A'], y: 6 },
   casque: { label: 'Casque', d: ['.....kkkkkkkkkk.....', '...kkGGGGGGGGGGkk...', '..kG............Gk..', '..k..............k..', '..k..............k..', '..k..............k..', '.aa..............aa.', 'aaA..............aaA', 'aaA..............aaA', 'aaA..............aaA', 'aaA..............aaA', '.aa..............aa.'], y: 0 },
   couronne: { label: 'Couronne', d: ['....y....yy....y....', '....yy..yyyy..yy....', '....yyyyyyyyyyyy....', '....yYyryYYyryYy....', '....YYYYYYYYYYYY....'], y: 0 },
+  ane: { label: 'Bonnet d’âne', d: ['.........ww.........', '........wwww........', '........wwwg........', '.......wwwwwg.......', '.......wwwwwg.......', '......wwwwwwwg......', '.....aaaaaaaaaa.....'], y: 0 },
   viking: { label: 'Viking', d: ['ww................ww', 'ww................ww', '.ww...gggggggg...ww.', '.wwwggggggggggggwww.', '..wgggggggggggggggw.', '..gggggggggggggggg..', '..GgGgGgGgGgGgGgGG..', '..GGGGGGGGGGGGGGGG..'], y: 1 },
 };
 const VISAGES = { aucun: { label: 'Aucun' }, lunettes: { label: 'Lunettes' }, solaires: { label: 'Solaires' }, ski: { label: 'Masque ski' }, eyeblack: { label: 'Eye black' }, pansement: { label: 'Pansement' }, cicatrice: { label: 'Cicatrice' } };
-const COUS = { aucun: { label: 'Aucun' }, echarpe: { label: 'Écharpe' }, chaine: { label: 'Chaîne' }, medaille: { label: 'Médaille' }, serviette: { label: 'Serviette' } };
-const OBJETS = { aucun: { label: 'Aucun' }, haltere: { label: 'Haltère' }, kettlebell: { label: 'Kettlebell' }, gourde: { label: 'Gourde' }, ballon: { label: 'Ballon' }, raquette: { label: 'Raquette' }, trophee: { label: 'Trophée' } };
+const COUS = { aucun: { label: 'Aucun' }, echarpe: { label: 'Écharpe' }, chaine: { label: 'Chaîne' }, medaille: { label: 'Médaille' }, serviette: { label: 'Serviette' }, cape: { label: 'Cape' } };
+const OBJETS = { aucun: { label: 'Aucun' }, haltere: { label: 'Haltère' }, kettlebell: { label: 'Kettlebell' }, gourde: { label: 'Gourde' }, ballon: { label: 'Ballon' }, raquette: { label: 'Raquette' }, trophee: { label: 'Trophée' }, tortue: { label: 'Tortue' } };
 const AURAS = { aucun: { label: 'Aucune' }, halo: { label: 'Halo' }, feu: { label: 'Feu' }, givre: { label: 'Givre' }, eclairs: { label: 'Éclairs' }, etoiles: { label: 'Étoiles' } };
 
 const AV_DEFAULT = { g: 'h', skin: SKINS[2], expr: 'sourire', eyeC: EYEC[0], hair: 'court', hairC: HAIRC[2], beard: 'none', top: 'hoodie', topC: CLOTH[0], topC2: CLOTH[2], motif: 'uni', bas: 'jogging', pantsC: CLOTH[1], shoes: 'baskets', shoesC: CLOTH[2], tete: 'aucun', teteC: CLOTH[3], visage: 'aucun', cou: 'aucun', couC: CLOTH[5], objet: 'aucun', aura: 'aucun', color: PCOL[0] };
@@ -952,6 +1085,7 @@ function buildSprite(a) {
   const pc = a.pantsC, pD = shade(pc, -0.22);
   const H = HAIRS[a.hair];
   if (H.back) H.back(cv, P);
+  if (a.cou === 'cape') { const cc0 = a.couC, ccS = shade(cc0, -0.25); cv.r(6, 21, 20, 2, cc0); cv.r(5, 23, 22, 13, cc0); cv.r(5, 36, 22, 1, ccS); cv.r(5, 23, 1, 13, ccS); cv.r(26, 23, 1, 13, ccS); }
   // bas
   if (a.bas === 'short') { cv.s(31, 11, 20, pc); cv.r(11, 32, 4, 2, pc); cv.r(17, 32, 4, 2, pc); cv.r(12, 34, 3, 3, s); cv.r(17, 34, 3, 3, s); cv.p(14, 34, sD); cv.p(19, 34, sD); }
   else if (a.bas === 'legging') { cv.s(31, 11, 20, pc); cv.r(12, 32, 3, 5, pc); cv.r(17, 32, 3, 5, pc); cv.p(14, 33, pD); cv.p(19, 33, pD); }
@@ -1003,6 +1137,7 @@ function buildSprite(a) {
   if (a.cou === 'echarpe') { cv.s(20, 11, 20, cc); cv.s(21, 10, 21, cc); cv.pts([[12, 21], [15, 21], [18, 21]], ccD); cv.r(17, 22, 2, 5, cc); cv.s(25, 17, 18, ccD); }
   if (a.cou === 'chaine') { cv.pts([[12, 21], [12, 22], [13, 23], [14, 24], [15, 24], [16, 24], [17, 24], [18, 23], [19, 22], [19, 21]], GOLD); cv.r(15, 25, 2, 1, GOLD_D); }
   if (a.cou === 'medaille') { cv.pts([[12, 21], [13, 22], [14, 23], [15, 24], [19, 21], [18, 22], [17, 23], [16, 24]], cc); cv.s(25, 14, 17, GOLD); cv.s(26, 14, 17, GOLD); cv.s(27, 15, 16, GOLD_D); cv.p(14, 25, W_); }
+  if (a.cou === 'cape') { cv.s(20, 12, 19, a.couC); cv.p(15, 21, GOLD); cv.p(16, 21, GOLD); }
   if (a.cou === 'serviette') { cv.r(10, 20, 3, 8, W_); cv.r(7, 20, 3, 2, W_); cv.s(26, 10, 12, cc); cv.r(12, 21, 1, 7, '#DCE3EE'); }
   if (H.over) H.over(cv, P);
   // tête
@@ -1037,6 +1172,7 @@ function buildSprite(a) {
   if (o === 'ballon') { cv.s(31, 25, 28, '#F97316'); cv.r(24, 32, 6, 4, '#F97316'); cv.s(36, 25, 28, '#F97316'); cv.r(26, 31, 1, 6, '#9A3412'); cv.s(33, 24, 29, '#9A3412'); }
   if (o === 'raquette') { cv.s(15, 24, 27, t2); cv.r(23, 16, 1, 8, t2); cv.r(28, 16, 1, 8, t2); cv.r(24, 16, 4, 8, '#F5F7FA'); cv.s(24, 24, 27, t2); for (let y = 17; y <= 23; y += 2) cv.s(y, 24, 27, '#C9D3E3'); cv.r(25, 16, 1, 8, '#C9D3E3'); cv.s(25, 25, 26, t2); cv.r(25, 26, 1, 6, DARK); }
   if (o === 'trophee') { cv.r(22, 23, 6, 4, GOLD); cv.p(21, 23, GOLD); cv.p(21, 24, GOLD); cv.p(28, 23, GOLD); cv.p(28, 24, GOLD); cv.r(27, 23, 1, 4, GOLD_D); cv.s(27, 23, 26, GOLD_D); cv.r(24, 28, 2, 2, GOLD_D); cv.s(32, 23, 26, GOLD_D); cv.p(23, 24, '#FFF3B0'); }
+  if (o === 'tortue') { cv.s(32, 24, 28, '#0E8A50'); cv.r(23, 33, 7, 2, '#17B26A'); cv.pts([[25, 33], [27, 34], [24, 34]], '#0E8A50'); cv.p(23, 35, '#7BD389'); cv.p(29, 35, '#7BD389'); cv.s(35, 24, 28, '#C9E9A8'); cv.r(30, 32, 2, 2, '#7BD389'); cv.p(31, 32, OUT); }
   if (o !== 'aucun') { cv.r(23, 30, 3, 2, s); cv.p(25, 31, sD); }
   return cv.g;
 }
@@ -1092,7 +1228,7 @@ function headEl(p, cls = '') {
 
 /* ---------- Moteur de score ---------- */
 const S = {
-  token: null, me: null, pinHash: null, players: {}, vers: {}, C: null, board: 'global', photos: [], photoImg: {}, phLoading: new Set(), photosReady: null, phDraft: null, view: 'home',
+  token: null, me: null, pinHash: null, players: {}, vers: {}, C: null, board: 'global', photos: [], photoImg: {}, phLoading: new Set(), photosReady: null, phDraft: null, reac: {}, comm: {}, socialReady: null, proofs: null, proofImg: {}, proofsReady: null, fileMode: 'photo', proofWeek: 0, view: 'home',
   logDate: null, draft: null, saving: false, ed: null, pin: null, gateStep: null, offline: false,
 };
 
@@ -1107,19 +1243,26 @@ function scoreEntry(e, mult, dbl) {
   const plus = b * mult, minus = m * mult * (dbl ? 2 : 1);
   return { plus, minus, total: plus - minus, nb: b, nm: m };
 }
-function dayState(r, i, tIdx, dbl) {
+/* Fenêtre de saisie : toute la semaine en cours jusqu'à aujourd'hui, plus la veille (le dimanche reste modifiable le lundi) */
+function editWindow(tIdx) {
+  if (tIdx < 0 || tIdx > TOTAL) return null;
+  const end = Math.min(tIdx, TOTAL - 1), ws = weekRange(weekOfIdx(end))[0];
+  return { start: Math.max(0, Math.min(ws, tIdx - 1)), end };
+}
+function dayState(r, i, tIdx, dbl, lockIdx) {
   if (i > tIdx) return { state: 'future', plus: 0, minus: 0, total: 0 };
   const d = dateAt(i), mult = d >= CONFIG.SPRINT_FROM ? 2 : 1, e = r.p.days && r.p.days[d];
   if (e) return { state: 'ok', e, dbl, ...scoreEntry(e, mult, dbl) };
-  if (i >= r.regIdx && i <= tIdx - 2) { const minus = -CONFIG.MISSING_DAY_PENALTY * mult; return { state: 'miss', plus: 0, minus, total: -minus }; }
-  return { state: i >= tIdx - 1 ? 'open' : 'none', plus: 0, minus: 0, total: 0 };
+  if (i >= r.regIdx && i < lockIdx) { const minus = -CONFIG.MISSING_DAY_PENALTY * mult; return { state: 'miss', plus: 0, minus, total: -minus }; }
+  return { state: i >= lockIdx ? 'open' : 'none', plus: 0, minus: 0, total: 0 };
 }
 
 function compute() {
   const tIdx = idxOf(today());
+  const win = editWindow(tIdx), lockIdx = win ? win.start : (tIdx < 0 ? 0 : TOTAL);
   const R = {};
   Object.values(S.players).filter(p => p && p.id).forEach(p => {
-    R[p.id] = { id: p.id, p, regIdx: regIdxOf(p), days: new Array(TOTAL), weeks: [0], total: 0, plus: 0, minus: 0, cum: [], dbl: new Set() };
+    R[p.id] = { id: p.id, p, regIdx: regIdxOf(p), days: new Array(TOTAL), weeks: [0], act: [false], total: 0, plus: 0, minus: 0, cum: [], dbl: new Set() };
   });
   const rs = Object.values(R);
   const W = [null];
@@ -1127,11 +1270,12 @@ function compute() {
     const [a, b] = weekRange(w);
     rs.forEach(r => {
       let ws = 0;
-      for (let i = a; i <= b; i++) { const s = dayState(r, i, tIdx, r.dbl.has(w)); r.days[i] = s; ws += s.total; }
-      r.weeks[w] = ws;
+      let act = false;
+      for (let i = a; i <= b; i++) { const s = dayState(r, i, tIdx, r.dbl.has(w), lockIdx); r.days[i] = s; ws += s.total; if (s.state === 'ok' && (s.nb > 0 || s.nm > 0)) act = true; }
+      r.weeks[w] = ws; r.act[w] = act;
     });
     const started = tIdx >= a, final = tIdx >= b + 2;
-    const elig = rs.filter(r => r.regIdx <= b);
+    const elig = rs.filter(r => r.regIdx <= b && r.act[w]);
     let winners = [], losers = [];
     if (started && elig.length) {
       const sc = elig.map(r => r.weeks[w]), mx = Math.max(...sc), mn = Math.min(...sc);
@@ -1151,6 +1295,14 @@ function compute() {
       if (d.state === 'ok' && d.nb > 0) { streak++; bestStreak = Math.max(bestStreak, streak); } else if (d.state !== 'future' && d.state !== 'open') streak = 0;
     });
     Object.assign(r, { total: t, entries, bonusDays, doubleDays, bestStreak, missed });
+    const st = { elapsed: 0, entries, sportDays: bonusDays, b: {}, m: {} };
+    BONUS.forEach(x => { st.b[x.key] = 0; }); MALUS.forEach(x => { st.m[x.key] = 0; });
+    r.days.forEach((d, i) => {
+      if (d.state !== 'future' && i >= r.regIdx && i <= Math.min(tIdx, TOTAL - 1)) st.elapsed++;
+      if (d.state === 'ok') { (d.e.b || []).forEach(k => { if (k in st.b) st.b[k]++; }); (d.e.m || []).forEach(k => { if (k in st.m) st.m[k]++; }); }
+    });
+    r.stats = st;
+    r.bestPct = Math.max(0, ...exoList(r.p).map(ex => { const pr = exoProgress(r.p, ex); return pr && pr.en.length >= 2 ? pr.pct : 0; }));
   });
   const byScore = (x, y) => (y.total - x.total) || (y.plus - x.plus) || x.p.name.localeCompare(y.p.name, 'fr');
   const list = rs.slice().sort(byScore);
@@ -1162,8 +1314,8 @@ function compute() {
     prev.forEach((r, i) => { r.prevRank = i > 0 && prev[i - 1].cum[ref] === r.cum[ref] ? prev[i - 1].prevRank : i + 1; });
     list.forEach(r => { r.trend = r.prevRank - r.rank; });
   }
-  rs.forEach(r => { r.badges = computeBadges(r, W, tIdx); });
-  return { tIdx, list, R, W, cw };
+  rs.forEach(r => { r.badges = computeBadges(r, W, tIdx); r.unl = unlockedKeys(r); });
+  return { tIdx, list, R, W, cw, win };
 }
 
 function bestOf(entries, better) {
@@ -1196,7 +1348,7 @@ function computeBadges(r, W, tIdx) {
       if (W[w].losers.includes(r.id)) got.add('turtle');
     }
   }
-  if (Object.values(p.gages || {}).some(g => g && g.done)) got.add('gage');
+  if (Object.values(p.gages || {}).some(g => g && g.done) || (S.proofs && [...S.proofs].some(k => k.startsWith(p.id + ':')))) got.add('gage');
   const nRec = Object.values(p.records || {}).reduce((s, a) => s + (Array.isArray(a) ? a.length : 0), 0);
   if (nRec >= 10) got.add('data');
   if (exoList(p).some(ex => { const pr = exoProgress(p, ex); return pr && pr.en.length >= 2 && pr.pct >= 0.15; })) got.add('progress');
@@ -1205,11 +1357,37 @@ function computeBadges(r, W, tIdx) {
 }
 
 function editableDates() {
-  const t = idxOf(today()), out = [];
-  if (t - 1 >= 0 && t - 1 <= TOTAL - 1) out.push({ d: dateAt(t - 1), label: 'Hier' });
-  if (t >= 0 && t <= TOTAL - 1) out.push({ d: dateAt(t), label: 'Aujourd’hui' });
+  const t = idxOf(today()), win = editWindow(t), out = [];
+  if (!win) return out;
+  const J3 = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+  for (let i = win.start; i <= win.end; i++) {
+    const d = dateAt(i), dt = parseYmd(d);
+    out.push({ d, label: i === t ? 'Auj.' : i === t - 1 ? 'Hier' : J3[dt.getDay()], num: dt.getDate() });
+  }
   return out;
 }
+
+/* Éléments de perso à débloquer */
+const UNLOCKS = [
+  { f: 'aura', k: 'givre', h: '10 points bonus cumulés', ok: r => r.plus >= 10 },
+  { f: 'aura', k: 'feu', h: '30 points bonus cumulés', ok: r => r.plus >= 30 },
+  { f: 'aura', k: 'etoiles', h: '60 points bonus cumulés', ok: r => r.plus >= 60 },
+  { f: 'aura', k: 'halo', h: '100 points bonus cumulés', ok: r => r.plus >= 100 },
+  { f: 'tete', k: 'couronne', h: 'Être roi d’une semaine', ok: r => r.badges.has('king') },
+  { f: 'objet', k: 'trophee', h: 'Une semaine complète sans malus', ok: r => r.badges.has('clean') },
+  { f: 'cou', k: 'medaille', h: '7 jours d’affilée avec du sport', ok: r => r.badges.has('streak7') },
+  { f: 'cou', k: 'chaine', h: '30 journées enregistrées', ok: r => r.entries >= 30 },
+  { f: 'tete', k: 'viking', h: 'Réaliser un gage avec photo preuve', ok: r => r.badges.has('gage') },
+  { f: 'cou', k: 'cape', h: 'Améliorer un record de 10 %', ok: r => r.bestPct >= 0.10 },
+  { f: 'aura', k: 'eclairs', h: 'Améliorer un record de 25 %', ok: r => r.bestPct >= 0.25 },
+  { f: 'tete', k: 'ane', h: '15 points de malus cumulés', ok: r => r.minus >= 15 },
+  { f: 'objet', k: 'tortue', h: 'Finir lanterne rouge d’une semaine', ok: r => r.badges.has('turtle') },
+];
+const LOCKS = new Map(UNLOCKS.map(u => [u.f + ':' + u.k, u]));
+const FIELD_NAME = { aura: 'Aura', tete: 'Tête', objet: 'Objet', cou: 'Cou' };
+const unlockedKeys = r => new Set(r && r.badges ? UNLOCKS.filter(u => u.ok(r)).map(u => u.f + ':' + u.k) : []);
+const lockInfo = (f, k) => LOCKS.get(f + ':' + k);
+const unlockLabel = u => `${FIELD_NAME[u.f]} ${AV_KEYS[u.f][u.k].label}`;
 const meP = () => S.players[S.me];
 const meR = () => S.C && S.C.R[S.me];
 
@@ -1418,8 +1596,10 @@ function heroBlock(phase) {
 
 function weekBoard(w) {
   const C = S.C, Wk = C.W[w];
-  const rs = C.list.filter(r => r.regIdx <= Wk.b).slice().sort((x, y) => (y.weeks[w] - x.weeks[w]) || x.p.name.localeCompare(y.p.name, 'fr'));
-  if (!rs.length) return '';
+  const all = C.list.filter(r => r.regIdx <= Wk.b);
+  const rs = all.filter(r => r.act[w]).sort((x, y) => (y.weeks[w] - x.weeks[w]) || x.p.name.localeCompare(y.p.name, 'fr'));
+  const idle = all.length - rs.length;
+  if (!rs.length) return `<div class="card locked"><span class="lock-em">💤</span><b>Personne n’a encore rien saisi cette semaine.</b><p class="muted">Le classement de la semaine apparaît dès la première journée enregistrée.</p></div>`;
   const nd = Wk.b - Wk.a + 1;
   const head = `<div class="row whead" aria-hidden="true"><span class="avh ghost"></span><span class="who"><span class="days">${JL.slice(0, nd).map(l => `<span class="dsq lbl">${l}</span>`).join('')}</span></span><span class="tot sm">pts</span></div>`;
   const rows = rs.map(r => {
@@ -1430,38 +1610,43 @@ function weekBoard(w) {
       <span class="tot ${r.weeks[w] < 0 ? 'neg' : ''}">${fmtN(r.weeks[w])}</span></button>`;
   }).join('');
   const verdict = dateAt(Wk.b + 2);
-  const foot = w > FULL_WEEKS ? 'Sprint final : chaque point compte double.'
+  const foot = (w > FULL_WEEKS ? 'Sprint final : chaque point compte double.'
     : Wk.final ? '🐢 Lanterne rouge de la semaine : gage à réaliser.'
-    : `🐢 Lanterne rouge provisoire. Verdict ${frLong(verdict)} à 0h.`;
+    : `🐢 Lanterne rouge provisoire. Verdict ${frLong(verdict)} à 0h.`)
+    + (idle ? ` ${idle} joueur${idle > 1 ? 's' : ''} sans aucune saisie cette semaine ${idle > 1 ? 'ne sont' : 'n’est'} pas classé${idle > 1 ? 's' : ''}.` : '');
   return `<div class="board">${head}${rows}</div><p class="board-foot">${foot}</p>`;
 }
 
-function gageCard() {
-  const C = S.C; let lf = 0;
-  for (let w = 1; w <= FULL_WEEKS; w++) if (C.W[w].final && C.W[w].losers.length) lf = w;
-  if (!lf) {
-    const verdict = dateAt(C.W[1].b + 2);
-    return secTitle('Le gage') + `<div class="card gage"><p class="gage-lead">Le dernier de chaque semaine tire un gage sportif à réaliser dans les 7 jours.</p>
-      <p class="muted">Premier verdict ${frLong(verdict)} à 0h, après le rattrapage du dimanche.</p>
-      <button class="btn ghost sm" data-act="gages">Voir les ${GAGES.length} gages</button></div>`;
+const proofDone = (pid, w) => !!((S.proofs && S.proofs.has(pid + ':' + w)) || (S.players[pid] && S.players[pid].gages && S.players[pid].gages[w] && S.players[pid].gages[w].done));
+function gageSpotlight() {
+  const C = S.C; if (C.tIdx < 0) return '';
+  const w = Math.min(C.cw, NWEEKS);
+  let h = '';
+  if (w <= FULL_WEEKS) {
+    const Wk = C.W[w], g = Wk.gage, los = Wk.losers.map(id => S.players[id]).filter(Boolean);
+    const left = los.length
+      ? `<div class="gs-who">${los.slice(0, 2).map(p => `<button class="gs-av" style="--c:${sanitizeAv(p.avatar).color}" data-act="profile" data-id="${esc(p.id)}">${avatar(p.avatar, 'full')}</button>`).join('')}</div>
+         <b class="gs-name">${los.map(p => esc(p.name)).join(', ')}</b><span class="gs-pts">${fmtN(C.R[los[0].id].weeks[w])} pts cette semaine</span>`
+      : `<div class="gs-empty">🐢</div><b class="gs-name">Personne pour l’instant</b><span class="gs-pts">Il faut au moins 2 joueurs actifs</span>`;
+    h += `<div class="gspot"><div class="gs-l"><span class="gs-tag">🐢 Lanterne rouge</span>${left}</div>
+      <div class="gs-r"><span class="gs-tag dark">Gage de la semaine ${w}</span><p class="gs-gage">${esc(g.t)}</p>
+      <span class="gs-meta">${esc(g.k)} ${flames(g.l)}</span><span class="gs-meta">Verdict ${frLong(dateAt(Wk.b + 2))} à 0h</span></div></div>`;
+  } else h += `<div class="card locked"><span class="lock-em">🏁</span><b>Sprint final : pas de gage, tout compte double.</b></div>`;
+  let lf = 0;
+  for (let k = 1; k <= FULL_WEEKS; k++) if (C.W[k].final && C.W[k].losers.length) lf = k;
+  if (lf) {
+    const Wk = C.W[lf], g = Wk.gage;
+    const rows = Wk.losers.map(id => {
+      const p = S.players[id]; if (!p) return '';
+      const done = proofDone(id, lf), hasProof = S.proofs && S.proofs.has(id + ':' + lf);
+      const act = hasProof ? `<button class="btn ghost sm" data-act="proof-view" data-id="${esc(id)}" data-w="${lf}">📸 Preuve</button>`
+        : id === S.me && S.proofsReady ? `<button class="btn plus sm" data-act="proof-add" data-w="${lf}">📸 Poster ma preuve</button>`
+        : `<em class="tag ${done ? 'green' : 'red'}">${done ? 'Fait' : 'En attente'}</em>`;
+      return `<div class="gp-row">${headEl(p)}<span class="gp-n"><b>${esc(p.name)}</b><small>${done ? 'Gage réalisé ✅' : 'Gage à faire ⏳'}</small></span>${act}</div>`;
+    }).join('');
+    h += `<div class="card gprev"><div class="gp-h"><b>Gage de la semaine ${lf}</b><span>à faire avant le ${frLong(dateAt(Wk.b + 7))}</span></div><p class="gp-g">${esc(g.t)}</p>${rows}</div>`;
   }
-  const Wk = C.W[lf], g = Wk.gage;
-  const rev = lsGet('wa_rev_' + lf) === '1' || Wk.losers.some(id => S.players[id] && S.players[id].gages && S.players[id].gages[lf] && S.players[id].gages[lf].done);
-  const deadline = dateAt(Wk.b + 7);
-  const losers = Wk.losers.map(id => {
-    const p = S.players[id]; if (!p) return '';
-    const done = p.gages && p.gages[lf] && p.gages[lf].done;
-    return `<span class="loser">${headEl(p)}<b>${esc(p.name)}</b>${rev ? (done ? '<em class="tag green">Fait</em>' : '<em class="tag red">À faire</em>') : ''}</span>`;
-  }).join('');
-  let body;
-  if (!rev) body = `<div class="reel" id="reel"><div class="reel-strip"><div class="reel-item q">?</div></div></div><button class="btn block" data-act="spin" data-w="${lf}">Tirer le gage</button>`;
-  else {
-    const mine = Wk.losers.includes(S.me) && !(meP().gages && meP().gages[lf] && meP().gages[lf].done);
-    body = `<div class="reel done"><div class="reel-item">${esc(g.t)}</div></div>
-      <div class="gage-meta"><span class="tag">${esc(g.k)}</span><span>${flames(g.l)}</span><span>avant le ${frLong(deadline)}</span></div>
-      ${mine ? `<button class="btn plus block" data-act="gagedone" data-w="${lf}">J’ai fait mon gage</button>` : ''}`;
-  }
-  return secTitle(`Gage de la semaine ${lf}`) + `<div class="card gage"><div class="losers">${losers}</div>${body}</div>`;
+  return secTitle('Le gage', `<button class="linkbtn" data-act="gages">Tous les gages</button>`) + h;
 }
 
 function chartCard() {
@@ -1476,11 +1661,11 @@ function viewHome() {
   const C = S.C, t = C.tIdx;
   const phase = t < 0 ? 'before' : t >= TOTAL ? 'after' : 'during';
   let h = heroBlock(phase);
+  if (phase === 'during') h += gageSpotlight();
   if (S.offline) h = `<p class="offline">Hors ligne : dernières données connues.</p>` + h;
   if (phase === 'before') {
     h += photoStrip();
     h += secTitle('Comment on marque') + rulesMini();
-    h += gageCard();
   } else {
     h += photoStrip();
     const maxAbs = Math.max(1, ...C.list.map(r => Math.max(r.plus, r.minus)));
@@ -1488,7 +1673,6 @@ function viewHome() {
     h += secTitle('Classement', isWeek ? rangeLabel(...weekRange(w)) : `${C.list.length} joueur${C.list.length > 1 ? 's' : ''}`);
     h += `<div class="seg board-seg"><button class="${isWeek ? '' : 'on'}" data-act="board" data-v="global">Général</button><button class="${isWeek ? 'on' : ''}" data-act="board" data-v="week">${weekName(w)}</button></div>`;
     h += isWeek ? weekBoard(w) : `<div class="board">${C.list.map(r => rowGlobal(r, maxAbs)).join('')}</div>`;
-    if (phase === 'during' || C.W[FULL_WEEKS].final) h += gageCard();
     h += secTitle('Course aux points', 'cumul par jour') + chartCard();
   }
   return h + inviteCard();
@@ -1509,7 +1693,7 @@ function tile(it, kind, on) {
 function viewLog() {
   const C = S.C, t = C.tIdx, opts = editableDates();
   const title = '<h1 class="h1">Ma journée</h1>';
-  if (t < 0) return title + `<div class="card locked"><span class="lock-em">🔒</span><b>La saisie ouvre ${frLong(CONFIG.START)}.</b><p class="muted">Chaque soir, tu coches ce que tu as fait. Tu peux aussi rattraper la veille.</p></div>` + secTitle('Comment on marque') + rulesMini();
+  if (t < 0) return title + `<div class="card locked"><span class="lock-em">🔒</span><b>La saisie ouvre ${frLong(CONFIG.START)}.</b><p class="muted">Chaque soir, tu coches ce que tu as fait. Tu peux compléter toute la semaine en cours.</p></div>` + secTitle('Comment on marque') + rulesMini();
   if (!opts.length) return title + `<div class="card locked"><span class="lock-em">🏁</span><b>Le challenge est terminé.</b><p class="muted">Les saisies sont closes. Le classement final est sur l’accueil.</p></div>`;
   if (!S.logDate || !opts.some(o => o.d === S.logDate) || !S.draft) setLogDate(opts[opts.length - 1].d);
   const d = S.logDate, me = meP(), r = meR(), w = weekOfIdx(idxOf(d));
@@ -1521,7 +1705,8 @@ function viewLog() {
   const capped = S.draft.b.size > CONFIG.DAILY_BONUS_CAP;
   const btnTxt = S.saving ? 'Enregistrement…' : saved ? (dirty ? 'Mettre à jour ma journée' : 'Journée enregistrée') : 'Enregistrer ma journée';
   const savedAt = saved && saved.ts ? new Date(saved.ts) : null;
-  return `${title}<div class="log-head"><p class="log-date">${frLong(d)}</p>${opts.length > 1 ? `<div class="seg">${opts.map(o => `<button class="${o.d === d ? 'on' : ''}" data-act="logdate" data-d="${o.d}">${o.label}</button>`).join('')}</div>` : ''}</div>
+  return `${title}<div class="daypick">${opts.map(o => { const sv = me.days && me.days[o.d]; return `<button class="dp ${o.d === d ? 'on' : ''} ${sv ? 'done' : ''}" data-act="logdate" data-d="${o.d}"><small>${o.label}</small><b>${o.num}</b><i>${sv ? '✓' : ''}</i></button>`; }).join('')}</div>
+  <p class="log-date">${frLong(d)}</p>
   <div class="scorepanel ${sc.total > 0 ? 'pos' : sc.total < 0 ? 'neg' : ''}">
     <div class="big">${fmtS(sc.total)}</div>
     <div class="sp-r"><span class="chip-p">+${sc.plus} bonus</span><span class="chip-m">−${sc.minus} malus</span>
@@ -1536,7 +1721,7 @@ function viewLog() {
   <p class="muted c">${savedAt ? `Enregistrée le ${savedAt.toLocaleDateString('fr-FR')} à ${savedAt.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}` : 'Pas encore enregistrée'}</p></div>
   ${secTitle(weekName(w), rangeLabel(...weekRange(w)))}
   <div class="card myweek">${weekStrip(r, w, true)}<div class="mw-tot"><span>Total de la semaine</span><b class="${r.weeks[w] < 0 ? 'neg' : ''}">${fmtN(r.weeks[w])}</b></div></div>
-  <p class="muted small">Saisie ouverte jusqu’au lendemain soir, ensuite c’est verrouillé${CONFIG.MISSING_DAY_PENALTY ? ` et un jour vide coûte ${fmtN(CONFIG.MISSING_DAY_PENALTY)}` : ''}. Tout est déclaratif : joue le jeu.</p>`;
+  <p class="muted small">Tu peux compléter tous les jours de la semaine en cours (et dimanche, le lundi). Ensuite c’est verrouillé${CONFIG.MISSING_DAY_PENALTY ? ` et un jour vide coûte ${fmtN(CONFIG.MISSING_DAY_PENALTY)}` : ''}. Tout est déclaratif : joue le jeu.</p>`;
 }
 
 /* Records */
@@ -1565,12 +1750,11 @@ function palmRow(Wk) {
   const win = ppl(Wk.winners), los = ppl(Wk.losers);
   const people = arr => arr.map(p => `<span class="pp">${headEl(p, 'xs')}<b>${esc(p.name)}</b></span>`).join('');
   const score = arr => arr.length ? fmtN(S.C.R[arr[0].id].weeks[Wk.w]) : '';
-  const rev = lsGet('wa_rev_' + Wk.w) === '1' || los.some(p => p.gages && p.gages[Wk.w] && p.gages[Wk.w].done);
   return `<div class="pw ${Wk.final ? '' : 'live'}">
     <div class="pw-h"><b>${weekName(Wk.w)}</b><span>${rangeLabel(Wk.a, Wk.b)}${Wk.final ? '' : ' (en cours)'}</span></div>
     <div class="pw-l"><span class="pw-ic">👑</span><span class="pw-ppl">${people(win) || '<em class="muted">égalité parfaite</em>'}</span><span class="pw-s">${score(win)}</span></div>
     ${Wk.w <= FULL_WEEKS ? `<div class="pw-l"><span class="pw-ic">🐢</span><span class="pw-ppl">${people(los) || '<em class="muted">personne</em>'}</span><span class="pw-s">${score(los)}</span></div>` : ''}
-    ${Wk.final && los.length && Wk.gage ? `<div class="pw-g"><span>${rev ? esc(Wk.gage.t) : 'Gage pas encore tiré : rendez-vous sur l’accueil.'}</span><span>${los.map(p => (p.gages && p.gages[Wk.w] && p.gages[Wk.w].done) ? '✅' : '⏳').join(' ')}</span></div>` : ''}
+    ${Wk.gage ? `<div class="pw-g"><span>${esc(Wk.gage.t)}</span><span>${Wk.final ? los.map(p => S.proofs && S.proofs.has(p.id + ':' + Wk.w) ? `<button class="linkbtn" data-act="proof-view" data-id="${esc(p.id)}" data-w="${Wk.w}">📸</button>` : (proofDone(p.id, Wk.w) ? '✅' : '⏳')).join(' ') : ''}</span></div>` : ''}
   </div>`;
 }
 function viewTrophies() {
@@ -1592,12 +1776,51 @@ function viewTrophies() {
 function kpis(r) {
   return `<div class="kpis"><div><small>Total</small><b>${fmtN(r.total)}</b></div><div class="p"><small>Bonus</small><b>+${r.plus}</b></div><div class="m"><small>Malus</small><b>−${r.minus}</b></div><div><small>Badges</small><b>${r.badges.size}</b></div></div>`;
 }
+function statsBlock(r) {
+  const s = r.stats, pct = s.elapsed ? Math.round(s.sportDays / s.elapsed * 100) : 0;
+  const avg = s.elapsed ? Math.round(r.total / s.elapsed * 10) / 10 : 0;
+  return `<div class="stats">
+    <div class="st wide"><small>Jours avec sport</small><b>${s.sportDays}<i> / ${s.elapsed}</i></b><span class="sbar"><i style="width:${pct}%"></i></span><em>${pct} %</em></div>
+    ${BONUS.map(x => `<div class="st"><small>${x.em} ${x.label}</small><b>${s.b[x.key]}</b></div>`).join('')}
+    <div class="st"><small>🔥 Meilleure série</small><b>${r.bestStreak}<i> j</i></b></div>
+    <div class="st"><small>📅 Journées saisies</small><b>${s.entries}</b></div>
+    <div class="st"><small>Moyenne / jour</small><b>${(avg > 0 ? '+' : avg < 0 ? '−' : '') + fmtDec(Math.abs(avg))}</b></div>
+    <div class="st wide"><small>Malus déclarés</small><span class="mal">${MALUS.map(x => `<span title="${esc(x.label)}">${x.em}<b>${s.m[x.key]}</b></span>`).join('')}</span></div>
+  </div>`;
+}
+function dayDetail(r, w) {
+  const [a, b] = weekRange(w); let rows = '';
+  for (let i = a; i <= b; i++) {
+    const d = r.days[i], dt = parseYmd(dateAt(i));
+    let icons, sc = '';
+    if (d.state === 'ok') {
+      icons = BONUS.filter(x => (d.e.b || []).includes(x.key)).map(x => `<span class="ib" title="${esc(x.label)}">${x.em}</span>`).join('')
+        + MALUS.filter(x => (d.e.m || []).includes(x.key)).map(x => `<span class="im" title="${esc(x.label)}">${x.em}</span>`).join('');
+      if (!icons) icons = '<em>Rien à signaler</em>';
+      sc = fmtS(d.total);
+    } else if (d.state === 'miss') { icons = '<em class="red">Non saisi</em>'; sc = fmtS(d.total); }
+    else if (d.state === 'open') icons = '<em>À compléter</em>';
+    else if (d.state === 'future') icons = '<em>À venir</em>';
+    else icons = '<em>Pas encore inscrit</em>';
+    rows += `<div class="dd"><span class="dd-d">${JOURS[dt.getDay()].slice(0, 3)} ${dt.getDate()}</span><span class="dd-i">${icons}</span><span class="dd-s ${d.total > 0 ? 'pos' : d.total < 0 ? 'neg' : ''}">${sc}</span></div>`;
+  }
+  return `<div class="dd-list">${rows}</div>`;
+}
+function weekChips(id, w) {
+  const last = Math.max(1, Math.min(S.C.cw, NWEEKS));
+  let h = ''; for (let k = 1; k <= last; k++) h += `<button class="chip ${k === w ? 'on' : ''}" data-act="pf-week" data-id="${esc(id)}" data-w="${k}">${k === SPRINT_WEEK ? 'Sprint' : 'S' + k}</button>`;
+  return `<div class="chips wk">${h}</div>`;
+}
+
 function viewMe() {
   const me = meP(), r = meR(), a = sanitizeAv(me.avatar);
   return `<section class="me-stage" style="--c:${a.color}"><div class="me-av">${avatar(a, 'full')}</div>
     <div class="me-id"><h1 class="h1">${esc(me.name)}</h1><span class="me-rank">${S.C.tIdx < 0 ? 'Prêt pour le départ' : `${ordinal(r.rank)} au classement`}</span>
     <button class="btn ghost sm" data-act="editav">Modifier mon perso</button></div></section>
   ${kpis(r)}
+  ${secTitle('Mes stats')}${statsBlock(r)}
+  ${secTitle('À débloquer', `${UNLOCKS.filter(u => r.unl.has(u.f + ':' + u.k)).length}/${UNLOCKS.length}`)}
+  <div class="unl">${UNLOCKS.map(u => { const ok = r.unl.has(u.f + ':' + u.k); return `<div class="ul ${ok ? 'ok' : ''}"><span class="ul-av">${avatar({ ...sanitizeAv(meP().avatar), [u.f]: u.k }, u.f === 'aura' || u.f === 'objet' ? 'full' : u.f === 'cou' ? 'torso' : 'head')}</span><span class="ul-t"><b>${esc(unlockLabel(u))}</b><small>${esc(u.h)}</small></span><span class="ul-s">${ok ? '✅' : '🔒'}</span></div>`; }).join('')}</div>
   ${secTitle('Mes badges', `${r.badges.size}/${BADGES.length}`)}
   <div class="bgrid">${BADGES.map(b => `<div class="badge ${r.badges.has(b.key) ? '' : 'locked'} ${b.shame ? 'shame' : ''}"><span class="e">${b.em}</span><b>${b.name}</b><small>${b.desc}</small></div>`).join('')}</div>
   ${secTitle('Réglages')}
@@ -1619,15 +1842,16 @@ function openSheet(html) {
 }
 function closeSheet() { $('#sheet').hidden = true; $('#sheet .sheet-body').innerHTML = ''; document.body.classList.remove('noscroll'); }
 
-function sheetProfile(id) {
+function sheetProfile(id, wSel) {
   const r = S.C.R[id]; if (!r) return;
-  const p = r.p, a = sanitizeAv(p.avatar), w = Math.max(1, Math.min(S.C.cw, NWEEKS));
+  const p = r.p, a = sanitizeAv(p.avatar), w = wSel || Math.max(1, Math.min(S.C.cw, NWEEKS));
   const recs = exoList(p).map(ex => ({ ex, pr: exoProgress(p, ex) })).filter(x => x.pr);
   openSheet(`<div class="pf" style="--c:${a.color}"><div class="pf-av">${avatar(a, 'full')}</div>
     <div class="pf-id"><h2 class="h2">${esc(p.name)}</h2><span class="muted">${S.C.tIdx < 0 ? 'Inscrit, prêt pour le départ' : ordinal(r.rank) + ' au classement'}</span>
     <div class="pf-badges">${BADGES.filter(b => r.badges.has(b.key)).map(b => `<span title="${esc(b.name)}">${b.em}</span>`).join('')}</div></div></div>
     ${kpis(r)}
-    ${S.C.tIdx >= 0 ? `<h3 class="h3">${weekName(w)}</h3><div class="card myweek">${weekStrip(r, w, true)}</div>` : ''}
+    ${S.C.tIdx >= 0 ? `<h3 class="h3">Détail des journées</h3>${weekChips(id, w)}<p class="muted">${weekName(w)}, ${rangeLabel(...weekRange(w))} : ${fmtN(r.weeks[w])} pts</p>${dayDetail(r, w)}` : ''}
+    <h3 class="h3">Stats</h3>${statsBlock(r)}
     <h3 class="h3">Records</h3>
     ${recs.length ? `<div class="hist">${recs.map(({ ex, pr }) => `<div class="hrow"><span>${esc(ex.label)}</span><b>${esc(fmtVal(pr.best.v, ex.unit))}</b>${deltaChip(pr, ex)}</div>`).join('')}</div>` : '<p class="muted">Pas encore de records notés.</p>'}
     ${id === S.me ? '<button class="btn ghost block" data-act="editav">Modifier mon perso</button>' : ''}`);
@@ -1673,18 +1897,22 @@ function sheetNewExo() {
 }
 function sheetRules() {
   openSheet(`<h2 class="h2">Règles du jeu</h2>${rulesMini()}<div class="rule-list">
-    <p><b>Chaque soir</b>, coche ce que tu as fait dans « Ma journée ». Tu peux rattraper la veille, au-delà c’est verrouillé.</p>
-    ${CONFIG.MISSING_DAY_PENALTY ? `<p><b>Jour non saisi</b> : ${fmtN(CONFIG.MISSING_DAY_PENALTY)} point. Oublier ne protège pas des malus.</p>` : ''}
-    <p><b>La semaine</b> va du lundi au dimanche. Verdict le mardi à 0h, une fois le rattrapage du dimanche passé.</p>
-    <p><b>Le dernier</b> de la semaine tire un gage à réaliser avant le dimanche suivant, preuve en photo ou vidéo dans le groupe. Égalité : tous les ex aequo y passent.</p>
+    <p><b>La saisie</b> : coche ce que tu as fait dans « Ma journée ». Tu peux compléter tous les jours de la semaine en cours, et le dimanche reste modifiable le lundi. Ensuite c’est verrouillé.</p>
+    ${CONFIG.MISSING_DAY_PENALTY ? `<p><b>Jour non saisi</b> : ${fmtN(CONFIG.MISSING_DAY_PENALTY)} point une fois verrouillé.</p>` : ''}
+    <p><b>Classement de la semaine</b> : du lundi au dimanche. Un joueur sans aucun point + ni − saisi dans la semaine n’y figure pas. Verdict le mardi à 0h.</p>
+    <p><b>Le gage</b> : chaque semaine a son gage fixé à l’avance. La lanterne rouge le réalise avant le dimanche suivant et poste sa photo preuve dans l’app. Égalité : tous les ex aequo y passent.</p>
     ${SPRINT_WEEK ? `<p><b>Sprint final</b> : le ${frShort(CONFIG.SPRINT_FROM)} et le ${frShort(CONFIG.END)}, tous les points comptent double.</p>` : ''}
-    <p><b>Confidentialité</b> : les autres voient ton total et tes points + et −, jamais le détail de tes malus.</p>
+    <p><b>Éléments à débloquer</b> : auras, couronne, cape et autres se gagnent avec les points, les gages, les séries et les records (voir Moi).</p>
+    <p><b>Transparence</b> : en touchant un joueur, tout le monde voit le détail de ses journées et ses stats.</p>
     <p><b>Honnêteté</b> : tout est déclaratif. Le challenge ne vaut que si tout le monde joue le jeu.</p></div>`);
 }
+
 function sheetGages() {
-  openSheet(`<h2 class="h2">Les gages</h2><p class="muted">Tirés au sort pour le dernier de chaque semaine.</p>
-    <div class="glist">${GAGES.map(g => `<div class="gi"><p>${esc(g.t)}</p><span class="gk"><span class="tag">${esc(g.k)}</span>${flames(g.l)}</span></div>`).join('')}</div>`);
+  const cw = S.C.cw;
+  openSheet(`<h2 class="h2">Les gages</h2><p class="muted">Un gage fixé pour chaque semaine. La lanterne rouge le réalise avant le dimanche suivant, photo preuve à l’appui.</p>
+    <div class="glist">${GAGE_PLAN.map((g, i) => { const w = i + 1, [a, b] = weekRange(w); return `<div class="gi ${w === cw ? 'cur' : ''}"><span class="gw">Semaine ${w}, ${rangeLabel(a, b)}${w === cw ? ' (en cours)' : ''}</span><p>${esc(g.t)}</p><span class="gk"><span class="tag">${esc(g.k)}</span>${flames(g.l)}</span></div>`; }).join('')}</div>`);
 }
+
 function sheetInstall() {
   openSheet(`<h2 class="h2">Installer l’app</h2>
     <div class="inst"><b>iPhone</b><p>Ouvre le lien dans Safari, touche le bouton Partager puis « Sur l’écran d’accueil ».</p></div>
@@ -1699,14 +1927,31 @@ function freeColor() {
   return PCOL.find(c => !used.has(c)) || pick(PCOL);
 }
 function edInit(mode, base) {
-  S.ed = { mode, tab: 'corps', name: '', av: sanitizeAv(base ? clone(base) : randomAvatar(pick(['h', 'f']), freeColor())) };
+  S.ed = { mode, tab: 'corps', name: '', base: base ? sanitizeAv(clone(base)) : {}, unl: unlockedKeys(mode === 'edit' ? meR() : null) };
+  S.ed.av = applyLocks(sanitizeAv(base ? clone(base) : randomAvatar(pick(['h', 'f']), freeColor())));
 }
+function isLocked(f, k) { const L = lockInfo(f, k); return !!L && !S.ed.unl.has(f + ':' + k) && S.ed.base[f] !== k; }
+function applyLocks(av) { for (const u of UNLOCKS) if (av[u.f] === u.k && isLocked(u.f, u.k)) av[u.f] = AV_DEFAULT[u.f]; return av; }
+function checkUnlocks() {
+  const r = meR(); if (!r || !r.unl) return;
+  const keys = [...r.unl], k = 'wa_unl_' + S.me, seen = safeParse(lsGet(k));
+  lsSet(k, JSON.stringify(keys));
+  const fresh = Array.isArray(seen) ? keys.filter(x => !seen.includes(x)) : keys;
+  if (!fresh.length) return;
+  const u = LOCKS.get(fresh[0]);
+  setTimeout(() => toast(fresh.length === 1 ? `🎁 Débloqué : ${unlockLabel(u)}` : `🎁 ${fresh.length} éléments débloqués : va voir dans Moi`, 'ok'), 1200);
+}
+
 function swatches(field, colors) {
   return `<div class="swatches">${colors.map(c => `<button class="sw ${S.ed.av[field] === c ? 'on' : ''}" style="background:${c}" data-act="ed-set" data-f="${field}" data-v="${c}" aria-label="Couleur ${c}"></button>`).join('')}</div>`;
 }
 function optTiles(field, keys, map, mode) {
-  return `<div class="opts">${keys.map(k => `<button class="opt ${S.ed.av[field] === k ? 'on' : ''}" data-act="ed-set" data-f="${field}" data-v="${k}">${avatar({ ...S.ed.av, [field]: k }, mode)}<span>${map[k].label}</span></button>`).join('')}</div>`;
+  return `<div class="opts">${keys.map(k => {
+    const lk = isLocked(field, k), L = lk && lockInfo(field, k);
+    return `<button class="opt ${S.ed.av[field] === k ? 'on' : ''} ${lk ? 'locked' : ''}" data-act="${lk ? 'ed-locked' : 'ed-set'}" data-f="${field}" data-v="${k}"${lk ? ` data-h="${esc(L.h)}"` : ''}>${avatar({ ...S.ed.av, [field]: k }, mode)}<span>${map[k].label}</span>${lk ? '<i class="lk">🔒</i>' : ''}</button>`;
+  }).join('')}</div>`;
 }
+
 const ED_TABS = [['corps', 'Corps'], ['visage', 'Visage'], ['cheveux', 'Cheveux'], ['tenue', 'Tenue'], ['equip', 'Équipement'], ['aura', 'Aura']];
 function edOpts() {
   const a = S.ed.av, K = m => Object.keys(m), L = (t, sub) => `<div class="opt-l">${t}${sub ? ` <small>${sub}</small>` : ''}</div>`;
@@ -1880,7 +2125,7 @@ function enterApp() {
   const g = $('#gate'); g.hidden = true; g.innerHTML = '';
   $('#app').hidden = false;
   S.C = compute(); S.lastDay = today();
-  renderShell(); go(S.view || 'home');
+  renderShell(); go(S.view || 'home'); checkUnlocks();
 }
 async function load() {
   try {
@@ -1896,7 +2141,7 @@ async function load() {
 async function start() {
   if (!configReady()) return gate('error', apiMessage({ kind: 'config' }));
   gate('loading');
-  try { await load(); await loadPhotos(); }
+  try { await load(); await loadExtras(); }
   catch (e) {
     if (e.kind === 'invalid_code') { lsDel(LS.token); S.token = null; return gate('token', apiMessage(e)); }
     return gate('error', apiMessage(e));
@@ -1914,11 +2159,11 @@ async function refresh(manual) {
   if (S.refreshing || S.saving) return;
   S.refreshing = true;
   try {
-    await load(); await loadPhotos();
+    await load(); await loadExtras();
     if (!S.players[S.me]) { forgetMe(); gate('welcome'); return; }
     S.C = compute();
     const ic = document.querySelector('.meic'); if (ic) ic.innerHTML = headEl(meP());
-    renderView();
+    renderView(); checkUnlocks();
     if (manual) toast(S.offline ? 'Hors ligne : dernières données connues' : 'Classement à jour');
   } catch (e) {
     if (manual) toast(apiMessage(e), 'err');
@@ -2052,7 +2297,8 @@ const ACT = {
   'sheet-close': () => closeSheet(),
   'ed-tab': el => { S.ed.tab = el.dataset.v; edRefresh(); },
   'ed-set': el => edSet(el.dataset.f, el.dataset.v),
-  'ed-rand': () => { S.ed.av = randomAvatar(S.ed.av.g, S.ed.av.color); edRefresh(); },
+  'ed-rand': () => { S.ed.av = applyLocks(randomAvatar(S.ed.av.g, S.ed.av.color)); edRefresh(); },
+  'ed-locked': el => toast(`🔒 À débloquer : ${el.dataset.h}`),
   'g-token': () => { const tk = extractToken(($('#tk') || {}).value); if (!tk) { toast('Ce lien n’est pas un lien d’invitation valide', 'err'); return; } lsSet(LS.token, tk); S.token = tk; start(); },
   'g-retry': () => start(),
   'g-reset': () => { lsDel(LS.token); S.token = null; gate('token'); },
@@ -2063,7 +2309,14 @@ const ACT = {
   'g-next': () => gNext(),
   pin: el => pinPress(el.dataset.v),
   board: el => { S.board = el.dataset.v; renderView(); },
-  'ph-add': () => pickPhoto(),
+  'ph-add': () => { S.fileMode = 'photo'; pickPhoto(); },
+  'proof-add': el => { S.fileMode = 'proof'; S.proofWeek = +el.dataset.w; pickPhoto(); },
+  'proof-view': el => proofView(el.dataset.id, +el.dataset.w),
+  'proof-publish': () => proofPublish(),
+  'ph-react': el => react(+el.dataset.id, el.dataset.e),
+  'ph-com': el => sendComment(+el.dataset.id),
+  'ph-cdel': el => delComment(+el.dataset.id, +el.dataset.c),
+  'pf-week': el => sheetProfile(el.dataset.id, +el.dataset.w),
   'ph-mine': () => sheetMine(),
   'ph-open': el => openViewer(+el.dataset.i),
   'ph-publish': () => publishPhoto(),
@@ -2078,6 +2331,7 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('input', e => { if (e.target.id === 'ed-name' && S.ed) S.ed.name = e.target.value; });
 document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.classList && e.target.classList.contains('cm-in')) { e.preventDefault(); sendComment(+e.target.dataset.id); return; }
   if (e.key === 'Escape' && !$('#viewer').hidden) closeViewer();
   else if (e.key === 'Escape' && !$('#sheet').hidden) closeSheet();
   const onPad = S.pin && !$('#gate').hidden && (S.gateStep === 'login' || S.gateStep === 'setpin');
@@ -2104,13 +2358,98 @@ const visiblePhotos = () => S.photos.filter(f => S.players[f.pid]);
 const myPhotoToday = () => visiblePhotos().find(f => f.pid === S.me && f.day === today());
 
 async function loadPhotos() {
+  const d = parseYmd(today()); d.setDate(d.getDate() - (PHOTO_DAYS - 1));
+  const since = ymd(d);
   try {
-    const d = parseYmd(today()); d.setDate(d.getDate() - (PHOTO_DAYS - 1));
-    const rows = await DB.photoList(ymd(d));
+    const rows = await DB.photoList(since);
     S.photos = (Array.isArray(rows) ? rows : []).filter(r => r && r.id && r.pid && r.day);
     S.photosReady = true;
-  } catch (e) {
-    if (e.kind === 'setup') S.photosReady = false;
+  } catch (e) { if (e.kind === 'setup') S.photosReady = false; return; }
+  try {
+    const so = await DB.social(since);
+    S.reac = {}; S.comm = {};
+    ((so && so.reactions) || []).forEach(x => { const R = (S.reac[x.p] = S.reac[x.p] || {}); (R[x.e] = R[x.e] || new Set()).add(x.u); });
+    ((so && so.comments) || []).forEach(c => { (S.comm[c.p] = S.comm[c.p] || []).push(c); });
+    S.socialReady = true;
+  } catch (e) { if (e.kind === 'setup') S.socialReady = false; }
+}
+async function loadProofs() {
+  try { const rows = await DB.proofList(); S.proofs = new Set((rows || []).map(r => r.pid + ':' + r.week)); S.proofsReady = true; }
+  catch (e) { if (e.kind === 'setup') S.proofsReady = false; }
+}
+const loadExtras = () => Promise.all([loadPhotos(), loadProofs()]);
+const REACTS = [['fire', '🔥'], ['muscle', '💪'], ['clap', '👏'], ['laugh', '😂'], ['wow', '😮']];
+const reactCount = id => Object.values(S.reac && S.reac[id] || {}).reduce((n, set) => n + set.size, 0);
+function socialPill(f) {
+  const n = reactCount(f.id), c = (S.comm && S.comm[f.id] || []).length;
+  if (!n && !c) return '';
+  const top = REACTS.map(([k, em]) => [em, ((S.reac[f.id] || {})[k] || new Set()).size]).filter(x => x[1]).sort((a, b) => b[1] - a[1])[0];
+  return `<span class="ph-soc">${n ? `${top ? top[0] : '🔥'} ${n}` : ''}${n && c ? '<i></i>' : ''}${c ? `💬 ${c}` : ''}</span>`;
+}
+function socialHTML(f) {
+  if (!S.socialReady) return '';
+  const R = S.reac[f.id] || {}, C = S.comm[f.id] || [];
+  const btns = REACTS.map(([k, em]) => { const set = R[k], n = set ? set.size : 0, mine = !!(set && set.has(S.me)); return `<button class="rx ${mine ? 'on' : ''}" data-act="ph-react" data-id="${f.id}" data-e="${k}" aria-pressed="${mine}">${em}${n ? `<b>${n}</b>` : ''}</button>`; }).join('');
+  const coms = C.map(c => { const p = S.players[c.u]; if (!p) return ''; return `<div class="cm">${headEl(p, 'xs')}<div class="cm-b"><b>${esc(p.name)}</b><p>${esc(c.t)}</p></div>${c.u === S.me ? `<button class="cm-x" data-act="ph-cdel" data-id="${f.id}" data-c="${c.id}" aria-label="Supprimer mon commentaire">×</button>` : ''}</div>`; }).join('');
+  return `<div class="rxs">${btns}</div><div class="cms">${coms || '<p class="cm-empty">Pas encore de commentaire.</p>'}</div>
+    <div class="cm-new"><input class="cm-in" id="cm-${f.id}" data-id="${f.id}" maxlength="200" placeholder="Écrire un commentaire…" enterkeyhint="send" autocomplete="off"><button class="cm-send" data-act="ph-com" data-id="${f.id}">Envoyer</button></div>`;
+}
+function refreshSocial(id) {
+  const f = S.photos.find(x => x.id === id); if (!f) return;
+  document.querySelectorAll(`[data-social="${id}"]`).forEach(el => { el.innerHTML = socialHTML(f); });
+}
+async function react(id, e) {
+  const R = (S.reac[id] = S.reac[id] || {}), set = (R[e] = R[e] || new Set()), had = set.has(S.me);
+  had ? set.delete(S.me) : set.add(S.me); refreshSocial(id);
+  try { await DB.react(id, e); }
+  catch (err) { had ? set.add(S.me) : set.delete(S.me); refreshSocial(id); handleSaveError(err); }
+}
+async function sendComment(id) {
+  const inp = $('#cm-' + id), t = ((inp && inp.value) || '').trim();
+  if (!t) return;
+  if (inp) inp.disabled = true;
+  try {
+    const cid = await DB.comment(id, t);
+    (S.comm[id] = S.comm[id] || []).push({ id: cid, p: id, u: S.me, t, at: new Date().toISOString() });
+    refreshSocial(id);
+    const box = document.querySelector(`[data-social="${id}"] .cms`); if (box) box.scrollTop = box.scrollHeight;
+  } catch (e) { if (inp) inp.disabled = false; handleSaveError(e); }
+}
+async function delComment(id, cid) {
+  if (!window.confirm('Supprimer ton commentaire ?')) return;
+  try { await DB.commentDelete(cid); S.comm[id] = (S.comm[id] || []).filter(c => c.id !== cid); refreshSocial(id); }
+  catch (e) { handleSaveError(e); }
+}
+
+/* Preuves de gage */
+function sheetProofPreview() {
+  const w = S.proofWeek, g = gageFor(w);
+  openSheet(`<h2 class="h2">Preuve de gage</h2><p class="muted">Semaine ${w} : ${esc(g.t)}</p>
+    <div class="ph-prev"><img src="${S.phDraft}" alt=""></div>
+    <button class="btn plus block" data-act="proof-publish">Valider mon gage</button>
+    <button class="btn ghost block" data-act="proof-add" data-w="${w}">Choisir une autre photo</button>`);
+}
+async function proofPublish() {
+  const w = S.proofWeek, img = S.phDraft; if (!w || !img) return;
+  const btn = document.querySelector('[data-act="proof-publish"]'); if (btn) { btn.disabled = true; btn.textContent = 'Envoi…'; }
+  try {
+    await DB.proofSave(w, img);
+    S.proofImg[S.me + ':' + w] = img; (S.proofs = S.proofs || new Set()).add(S.me + ':' + w);
+    const me = clone(meP()); me.gages = me.gages || {}; me.gages[w] = { done: true, proof: true, ts: Date.now() };
+    await savePlayer(me, `${me.name} : gage semaine ${w} réalisé`);
+    S.phDraft = null; closeSheet(); S.C = compute(); renderView(); checkUnlocks();
+    toast('Gage validé. Respect 🎖️', 'ok'); confetti();
+  } catch (e) { if (btn && btn.isConnected) { btn.disabled = false; btn.textContent = 'Valider mon gage'; } handleSaveError(e); }
+}
+async function proofView(pid, w) {
+  const p = S.players[pid], g = gageFor(w), key = pid + ':' + w; if (!p) return;
+  const img = S.proofImg[key];
+  openSheet(`<h2 class="h2">Preuve de gage</h2><p class="muted">${esc(p.name)}, semaine ${w} : ${esc(g.t)}</p>
+    <div class="ph-prev contain" id="proof-box">${img ? `<img src="${img}" alt="">` : '<i class="ph-load"></i>'}</div>
+    ${pid === S.me ? `<button class="btn ghost block" data-act="proof-add" data-w="${w}">Remplacer la photo</button>` : ''}`);
+  if (!img) {
+    try { const src = await DB.proofGet(pid, w); if (src) { S.proofImg[key] = src; const b = $('#proof-box'); if (b) b.innerHTML = `<img src="${src}" alt="">`; } }
+    catch (e) { toast(apiMessage(e), 'err'); }
   }
 }
 
@@ -2122,12 +2461,12 @@ function photoStrip() {
   if (!S.photosReady) return '';
   const list = visiblePhotos(), mine = myPhotoToday();
   const first = mine
-    ? `<button class="ph mine" data-act="ph-mine">${phImg(mine)}<span class="ph-badge">Ta photo</span><span class="ph-who"><b>Modifier</b></span></button>`
+    ? `<button class="ph mine" data-act="ph-mine">${phImg(mine)}<span class="ph-badge">Ta photo</span>${socialPill(mine)}<span class="ph-who"><b>Voir et modifier</b></span></button>`
     : `<button class="ph add" data-act="ph-add"><span class="ph-plus">+</span><b>Ma photo du jour</b><small>Une par jour, visible par tous les joueurs</small></button>`;
   const cards = list.map((f, i) => {
     if (f === mine) return '';
     const p = S.players[f.pid];
-    return `<button class="ph" data-act="ph-open" data-i="${i}">${phImg(f)}${f.caption ? `<span class="ph-cap">${esc(f.caption)}</span>` : ''}<span class="ph-who">${headEl(p, 'xs')}<b>${esc(p.name)}</b><em>${dayLabel(f.day)}</em></span></button>`;
+    return `<button class="ph" data-act="ph-open" data-i="${i}">${phImg(f)}${f.caption ? `<span class="ph-cap">${esc(f.caption)}</span>` : ''}${socialPill(f)}<span class="ph-who">${headEl(p, 'xs')}<b>${esc(p.name)}</b><em>${dayLabel(f.day)}</em></span></button>`;
   }).join('');
   const n = list.length;
   return secTitle('Le mur', n ? `${n} photo${n > 1 ? 's' : ''} sur 7 jours` : 'poste la première')
@@ -2190,7 +2529,7 @@ document.addEventListener('change', async e => {
   if (e.target.id !== 'ph-file') return;
   const file = e.target.files && e.target.files[0];
   if (!file) return;
-  try { S.phDraft = await compressImage(file); sheetPhotoPreview(); }
+  try { S.phDraft = await compressImage(file); if (S.fileMode === 'proof') sheetProofPreview(); else sheetPhotoPreview(); }
   catch (err) { toast('Impossible de lire cette image, essaie une autre photo', 'err'); }
 });
 function sheetPhotoPreview() {
@@ -2218,7 +2557,7 @@ async function publishPhoto() {
 }
 function sheetMine() {
   const mine = myPhotoToday();
-  if (!mine) return pickPhoto();
+  if (!mine) { S.fileMode = 'photo'; return pickPhoto(); }
   openSheet(`<h2 class="h2">Ta photo du jour</h2><div class="ph-prev">${phImg(mine)}</div>${mine.caption ? `<p class="muted c">${esc(mine.caption)}</p>` : ''}
     <button class="btn block" data-act="ph-add">Remplacer la photo</button>
     <button class="btn ghost danger block" data-act="ph-del" data-d="${mine.day}">Supprimer</button>`);
@@ -2238,7 +2577,7 @@ function openViewer(i) {
     <div class="vw-track" id="vw-track">${list.map(f => {
       const p = S.players[f.pid];
       return `<div class="vw-slide"><div class="vw-in"><div class="vw-who">${headEl(p, 'xs')}<b>${esc(p.name)}</b><em>${dayLabel(f.day)}</em></div>${phImg(f)}
-        ${f.caption ? `<p class="vw-cap">${esc(f.caption)}</p>` : ''}${f.pid === S.me ? `<button class="btn ghost sm danger" data-act="ph-del" data-d="${f.day}">Supprimer ma photo</button>` : ''}</div></div>`;
+        ${f.caption ? `<p class="vw-cap">${esc(f.caption)}</p>` : ''}<div class="vw-soc" data-social="${f.id}">${socialHTML(f)}</div>${f.pid === S.me ? `<button class="btn ghost sm danger" data-act="ph-del" data-d="${f.day}">Supprimer ma photo</button>` : ''}</div></div>`;
     }).join('')}</div>`;
   v.hidden = false; document.body.classList.add('noscroll');
   const tr = $('#vw-track');
@@ -2251,6 +2590,7 @@ function closeViewer() {
   const v = $('#viewer'); if (v.hidden) return;
   v.hidden = true; v.innerHTML = '';
   if ($('#sheet').hidden) document.body.classList.remove('noscroll');
+  if (S.view === 'home') renderView();
 }
 
 /* Démarrage */
