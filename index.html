@@ -540,9 +540,22 @@ input[type=date].field{font-size:16px}
 .ul-t b{font-weight:900;font-size:14px}.ul-t small{font-size:12px;font-weight:700;color:var(--ink2)}
 .ul-s{font-size:18px}
 .opt{position:relative}
-.opt.locked svg{filter:grayscale(1);opacity:.35}
+.opt.locked svg{filter:grayscale(1);opacity:.5}
 .opt.locked span{color:var(--ink3)}
 .opt .lk{position:absolute;top:4px;right:4px;font-style:normal;font-size:14px}
+
+.ug-t{font-weight:900;font-size:14px;margin:16px 0 8px;color:var(--ink2)}
+.ugrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.uc{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;padding:6px 4px 8px;border:2px solid var(--line2);border-radius:14px;background:#fff}
+.uc.ok{border-color:var(--plus);background:var(--plus-bg);box-shadow:0 3px 0 var(--plus)}
+.uc-av{width:100%;aspect-ratio:1;border-radius:10px;background:var(--frost);overflow:hidden;display:block}
+.uc-av svg{width:100%;height:100%;display:block}
+.uc:not(.ok) .uc-av svg{filter:grayscale(1);opacity:.55}
+.uc-av.pet{padding:14%}
+.uc b{font-weight:900;font-size:12px;line-height:1.15}
+.uc small{font-size:10px;font-weight:700;color:var(--ink2);line-height:1.2}
+.uc i{position:absolute;top:4px;right:6px;font-style:normal;font-size:13px}
+.ed-tabs{grid-template-columns:repeat(3,1fr)}
 
 /* Réactions et commentaires */
 .ph-soc{position:absolute;right:8px;bottom:56px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:900;color:var(--ink);background:rgba(255,255,255,.94);border:2px solid var(--ink);border-radius:99px;padding:3px 8px}
@@ -1036,16 +1049,33 @@ const TETES = {
   casque: { label: 'Casque', d: ['.....kkkkkkkkkk.....', '...kkGGGGGGGGGGkk...', '..kG............Gk..', '..k..............k..', '..k..............k..', '..k..............k..', '.aa..............aa.', 'aaA..............aaA', 'aaA..............aaA', 'aaA..............aaA', 'aaA..............aaA', '.aa..............aa.'], y: 0 },
   couronne: { label: 'Couronne', d: ['....y....yy....y....', '....yy..yyyy..yy....', '....yyyyyyyyyyyy....', '....yYyryYYyryYy....', '....YYYYYYYYYYYY....'], y: 0 },
   ane: { label: 'Bonnet d’âne', d: ['.........ww.........', '........wwww........', '........wwwg........', '.......wwwwwg.......', '.......wwwwwg.......', '......wwwwwwwg......', '.....aaaaaaaaaa.....'], y: 0 },
+  laurier: { label: 'Laurier', d: ['.....g........g.....', '...gGg........gGg...', '..gG............Gg..', '.gG..............Gg.', '.gg..............gg.', '..g..............g..'], y: 4 },
+  aureole: { label: 'Auréole', d: ['......YyyyyyyY......', '.....y........y.....', '......YyyyyyyY......'], y: 0 },
+  cornes: { label: 'Cornes', d: ['..R..............R..', '..rR............Rr..', '...rr..........rr...', '....rr........rr....'], y: 0 },
+  nuit: { label: 'Bonnet de nuit', d: ['......aaaaaaa.........', '....aaaaaaaaaaa.......', '...aaaaaaaaaaaaaa.....', '..aaaaaaaaaaaaaaaaa...', '..wwwwwwwwwwwwwwwwaa..', '..................aa..', '...................aa.', '...................ww.', '..................www.', '...................w..'], y: 1 },
+  pasteque: { label: 'Pastèque', d: ['......GgGgGgGg......', '....gGgGgGgGgGgG....', '...GgGgGgGgGgGgGg...', '..gGgGgGgGgGgGgGgG..', '..GgGgGgGgGgGgGgGg..', '..llllllllllllllll..', '..rrkrrrrkrrrrkrrr..'], y: 1 },
   viking: { label: 'Viking', d: ['ww................ww', 'ww................ww', '.ww...gggggggg...ww.', '.wwwggggggggggggwww.', '..wgggggggggggggggw.', '..gggggggggggggggg..', '..GgGgGgGgGgGgGgGG..', '..GGGGGGGGGGGGGGGG..'], y: 1 },
 };
 const VISAGES = { aucun: { label: 'Aucun' }, lunettes: { label: 'Lunettes' }, solaires: { label: 'Solaires' }, ski: { label: 'Masque ski' }, eyeblack: { label: 'Eye black' }, pansement: { label: 'Pansement' }, cicatrice: { label: 'Cicatrice' } };
-const COUS = { aucun: { label: 'Aucun' }, echarpe: { label: 'Écharpe' }, chaine: { label: 'Chaîne' }, medaille: { label: 'Médaille' }, serviette: { label: 'Serviette' }, cape: { label: 'Cape' } };
-const OBJETS = { aucun: { label: 'Aucun' }, haltere: { label: 'Haltère' }, kettlebell: { label: 'Kettlebell' }, gourde: { label: 'Gourde' }, ballon: { label: 'Ballon' }, raquette: { label: 'Raquette' }, trophee: { label: 'Trophée' }, tortue: { label: 'Tortue' } };
-const AURAS = { aucun: { label: 'Aucune' }, halo: { label: 'Halo' }, feu: { label: 'Feu' }, givre: { label: 'Givre' }, eclairs: { label: 'Éclairs' }, etoiles: { label: 'Étoiles' } };
+const COUS = { aucun: { label: 'Aucun' }, echarpe: { label: 'Écharpe' }, chaine: { label: 'Chaîne' }, medaille: { label: 'Médaille' }, serviette: { label: 'Serviette' } };
+const OBJETS = { aucun: { label: 'Aucun' }, haltere: { label: 'Haltère' }, kettlebell: { label: 'Kettlebell' }, gourde: { label: 'Gourde' }, ballon: { label: 'Ballon' }, raquette: { label: 'Raquette' }, trophee: { label: 'Trophée' }, epee_bois: { label: 'Épée en bois' }, epee_acier: { label: 'Épée d’acier' }, epee_legende: { label: 'Épée légendaire' }, haltere_or: { label: 'Haltère d’or' }, banane: { label: 'Banane' }, brocoli: { label: 'Brocoli' }, frites: { label: 'Frites' } };
+const AURAS = { aucun: { label: 'Aucune' }, halo: { label: 'Halo' }, feu: { label: 'Feu' }, givre: { label: 'Givre' }, eclairs: { label: 'Éclairs' }, etoiles: { label: 'Étoiles' }, arcenciel: { label: 'Arc-en-ciel' }, aurore: { label: 'Aurore boréale' }, flammes: { label: 'Flammes bleues' }, vitesse: { label: 'Vitesse' }, fumee: { label: 'Fumée noire' } };
+const DOS = { aucun: { label: 'Rien' }, cape: { label: 'Cape' }, ailes: { label: 'Ailes d’ange' }, jetpack: { label: 'Jetpack' } };
+const PETS = {
+  aucun: { label: 'Aucun' },
+  poussin: { label: 'Poussin', pal: { y: '#FFD43B', Y: '#E9B10C', o: '#F97316', k: OUT }, d: ['..yyy...', '.yyyyy..', '.yykyyo.', 'yyyyyyy.', 'yYYyyyy.', '.yyyyy..', '..o.o...'] },
+  chat: { label: 'Chat', pal: { o: '#F59E3B', O: '#C96F1A', w: '#FFF3E0', k: OUT, p: '#F48FB1' }, d: ['..o...o.', '..ooooo.', '..okoko.', 'O.oopoo.', 'O.ooooo.', '.oOoOoo.', '.w.w.ww.'] },
+  chien: { label: 'Chien', pal: { b: '#A3622B', B: '#6E3F19', w: '#F2E8D5', k: OUT, t: '#F06B8A', n: OUT }, d: ['...bbb..', '..BbbbB.', '..BkbkB.', '..Bbwwn.', 'b.bbbtb.', '.bbbbbb.', '.w.w.ww.'] },
+  renard: { label: 'Renard', pal: { o: '#F97316', O: '#C2410C', w: '#FFFFFF', k: OUT }, d: ['..O...O.', '..oo.oo.', '..okoko.', 'w.owwwk.', 'oo.oooo.', '.oOoooo.', '..k.k.k.'] },
+  pingouin: { label: 'Pingouin', pal: { k: '#1E2433', w: '#F5F7FA', y: '#FFB020' }, d: ['..kkkk..', '.kwkkwk.', '.kkyykk.', 'kkwwwwkk', 'kkwwwwkk', '.kwwwwk.', '.yy..yy.'] },
+  paresseux: { label: 'Paresseux', pal: { b: '#8D6E52', B: '#5E4636', c: '#D9C2A3', k: OUT, n: '#3B2A20' }, d: ['.bbbbbb.', 'bccccccb', 'bBkcckBb', 'bcccnccb', '.bccccb.', 'bbbbbbbb', 'b.b..b.b'] },
+  dragon: { label: 'Dragon', pal: { g: '#22C55E', G: '#15803D', y: '#FDE047', r: '#F04452', w: '#A7F3D0', k: OUT }, d: ['G...ggg.', 'GG.gggkg', 'GGGggggr', '.GGgyyg.', '..ggyyg.', 'g.ggggg.', '.g.g.g..'] },
+  tortue: { label: 'Tortue', pal: { g: '#17B26A', G: '#0E8A50', l: '#7BD389', c: '#C9E9A8', k: OUT }, d: ['........', '..GGGG..', '.GgGgGGl', 'GgGgGgGl', 'GGGGGGlk', 'cccccccl', '.l.l.l..'] },
+};
 
-const AV_DEFAULT = { g: 'h', skin: SKINS[2], expr: 'sourire', eyeC: EYEC[0], hair: 'court', hairC: HAIRC[2], beard: 'none', top: 'hoodie', topC: CLOTH[0], topC2: CLOTH[2], motif: 'uni', bas: 'jogging', pantsC: CLOTH[1], shoes: 'baskets', shoesC: CLOTH[2], tete: 'aucun', teteC: CLOTH[3], visage: 'aucun', cou: 'aucun', couC: CLOTH[5], objet: 'aucun', aura: 'aucun', color: PCOL[0] };
-const AV_KEYS = { hair: HAIRS, expr: EXPRS, beard: BEARDS, top: TOPS, motif: MOTIFS, bas: BAS, shoes: SHOES, tete: TETES, visage: VISAGES, cou: COUS, objet: OBJETS, aura: AURAS };
-const AV_COLORS = ['skin', 'eyeC', 'hairC', 'topC', 'topC2', 'pantsC', 'shoesC', 'teteC', 'couC', 'color'];
+const AV_DEFAULT = { dos: 'aucun', dosC: CLOTH[3], compagnon: 'aucun', g: 'h', skin: SKINS[2], expr: 'sourire', eyeC: EYEC[0], hair: 'court', hairC: HAIRC[2], beard: 'none', top: 'hoodie', topC: CLOTH[0], topC2: CLOTH[2], motif: 'uni', bas: 'jogging', pantsC: CLOTH[1], shoes: 'baskets', shoesC: CLOTH[2], tete: 'aucun', teteC: CLOTH[3], visage: 'aucun', cou: 'aucun', couC: CLOTH[5], objet: 'aucun', aura: 'aucun', color: PCOL[0] };
+const AV_KEYS = { dos: DOS, compagnon: PETS, hair: HAIRS, expr: EXPRS, beard: BEARDS, top: TOPS, motif: MOTIFS, bas: BAS, shoes: SHOES, tete: TETES, visage: VISAGES, cou: COUS, objet: OBJETS, aura: AURAS };
+const AV_COLORS = ['dosC', 'skin', 'eyeC', 'hairC', 'topC', 'topC2', 'pantsC', 'shoesC', 'teteC', 'couC', 'color'];
 
 function sanitizeAv(raw) {
   const a = { ...AV_DEFAULT, ...(raw || {}) };
@@ -1055,6 +1085,8 @@ function sanitizeAv(raw) {
     if (isHex(raw.accC)) { a.teteC = raw.accC; a.couC = raw.accC; }
   }
   delete a.acc; delete a.accC;
+  if (a.cou === 'cape') { a.cou = 'aucun'; if (!raw.dos || raw.dos === 'aucun') { a.dos = 'cape'; if (isHex(raw.couC)) a.dosC = raw.couC; } }
+  if (a.objet === 'tortue') { a.objet = 'aucun'; if (!raw.compagnon || raw.compagnon === 'aucun') a.compagnon = 'tortue'; }
   for (const k of AV_COLORS) if (!isHex(a[k])) a[k] = AV_DEFAULT[k];
   if (a.g !== 'f') a.g = 'h';
   for (const [k, m] of Object.entries(AV_KEYS)) if (!m[a[k]]) a[k] = AV_DEFAULT[k];
@@ -1085,7 +1117,16 @@ function buildSprite(a) {
   const pc = a.pantsC, pD = shade(pc, -0.22);
   const H = HAIRS[a.hair];
   if (H.back) H.back(cv, P);
-  if (a.cou === 'cape') { const cc0 = a.couC, ccS = shade(cc0, -0.25); cv.r(6, 21, 20, 2, cc0); cv.r(5, 23, 22, 13, cc0); cv.r(5, 36, 22, 1, ccS); cv.r(5, 23, 1, 13, ccS); cv.r(26, 23, 1, 13, ccS); }
+  if (a.dos === 'cape') { const cc0 = a.dosC, ccS = shade(cc0, -0.25); cv.r(6, 21, 20, 2, cc0); cv.r(5, 23, 22, 13, cc0); cv.r(5, 36, 22, 1, ccS); cv.r(5, 23, 1, 13, ccS); cv.r(26, 23, 1, 13, ccS); }
+  if (a.dos === 'ailes') {
+    const wing = ['.......ww', '.....wwww', '...wwwwwg', '..wwwwwgw', '.wwwwwgww', 'wwwwwgwww', 'wwwwgwwww', '.wwwwwwww', '.wwwgwwww', '..wwwwwww', '..wwgwww.', '...wwww..', '....ww...'];
+    const pal = { w: '#F5F7FA', g: '#C9D3E3' };
+    wing.forEach((row, j) => { for (let i = 0; i < row.length; i++) { const c = pal[row[i]]; if (c) { cv.p(i, 15 + j, c); cv.p(31 - i, 15 + j, c); } } });
+  }
+  if (a.dos === 'jetpack') {
+    for (const x0 of [2, 26]) { cv.r(x0, 19, 4, 12, METAL); cv.r(x0 + 3, 19, 1, 12, METAL_D); cv.s(18, x0 + 1, x0 + 2, METAL); cv.r(x0, 23, 4, 1, a.dosC); cv.r(x0 + 1, 31, 2, 1, METAL_D); cv.r(x0 + 1, 32, 2, 2, '#FFB020'); cv.p(x0 + 1, 34, '#F97316'); cv.p(x0 + 2, 35, '#F04452'); }
+    cv.r(6, 21, 20, 2, METAL_D);
+  }
   // bas
   if (a.bas === 'short') { cv.s(31, 11, 20, pc); cv.r(11, 32, 4, 2, pc); cv.r(17, 32, 4, 2, pc); cv.r(12, 34, 3, 3, s); cv.r(17, 34, 3, 3, s); cv.p(14, 34, sD); cv.p(19, 34, sD); }
   else if (a.bas === 'legging') { cv.s(31, 11, 20, pc); cv.r(12, 32, 3, 5, pc); cv.r(17, 32, 3, 5, pc); cv.p(14, 33, pD); cv.p(19, 33, pD); }
@@ -1137,7 +1178,7 @@ function buildSprite(a) {
   if (a.cou === 'echarpe') { cv.s(20, 11, 20, cc); cv.s(21, 10, 21, cc); cv.pts([[12, 21], [15, 21], [18, 21]], ccD); cv.r(17, 22, 2, 5, cc); cv.s(25, 17, 18, ccD); }
   if (a.cou === 'chaine') { cv.pts([[12, 21], [12, 22], [13, 23], [14, 24], [15, 24], [16, 24], [17, 24], [18, 23], [19, 22], [19, 21]], GOLD); cv.r(15, 25, 2, 1, GOLD_D); }
   if (a.cou === 'medaille') { cv.pts([[12, 21], [13, 22], [14, 23], [15, 24], [19, 21], [18, 22], [17, 23], [16, 24]], cc); cv.s(25, 14, 17, GOLD); cv.s(26, 14, 17, GOLD); cv.s(27, 15, 16, GOLD_D); cv.p(14, 25, W_); }
-  if (a.cou === 'cape') { cv.s(20, 12, 19, a.couC); cv.p(15, 21, GOLD); cv.p(16, 21, GOLD); }
+  if (a.dos === 'cape') { cv.s(20, 12, 19, a.dosC); cv.p(15, 21, GOLD); cv.p(16, 21, GOLD); }
   if (a.cou === 'serviette') { cv.r(10, 20, 3, 8, W_); cv.r(7, 20, 3, 2, W_); cv.s(26, 10, 12, cc); cv.r(12, 21, 1, 7, '#DCE3EE'); }
   if (H.over) H.over(cv, P);
   // tête
@@ -1163,7 +1204,7 @@ function buildSprite(a) {
   H.front(cv, P);
   // tête : accessoire
   const T = TETES[a.tete];
-  if (T.d) { const tc = a.teteC; cv.m(6, T.y, T.d, { a: tc, A: shade(tc, -0.22), b: shade(tc, 0.3), w: '#F5F7FA', g: METAL, G: METAL_D, k: OUT, y: GOLD, Y: GOLD_D, r: '#F04452', h }); }
+  if (T.d) { const tc = a.teteC; cv.m(6, T.y, T.d, a.tete === 'laurier' ? { g: '#4CAF50', G: '#2E7D32' } : a.tete === 'pasteque' ? { g: '#16A34A', G: '#14532D', l: '#BBF7D0', r: '#F04452', k: OUT } : a.tete === 'cornes' ? { r: '#DC2626', R: '#7F1D1D' } : { a: tc, A: shade(tc, -0.22), b: shade(tc, 0.3), w: '#F5F7FA', g: METAL, G: METAL_D, k: OUT, y: GOLD, Y: GOLD_D, r: '#F04452', h }); }
   // objet en main droite
   const o = a.objet;
   if (o === 'haltere') { cv.r(21, 30, 8, 2, METAL_D); cv.r(18, 27, 3, 8, METAL); cv.r(28, 27, 3, 8, METAL); cv.r(20, 27, 1, 8, METAL_D); cv.r(30, 27, 1, 8, METAL_D); cv.p(18, 27, W_); cv.p(28, 27, W_); }
@@ -1173,12 +1214,26 @@ function buildSprite(a) {
   if (o === 'raquette') { cv.s(15, 24, 27, t2); cv.r(23, 16, 1, 8, t2); cv.r(28, 16, 1, 8, t2); cv.r(24, 16, 4, 8, '#F5F7FA'); cv.s(24, 24, 27, t2); for (let y = 17; y <= 23; y += 2) cv.s(y, 24, 27, '#C9D3E3'); cv.r(25, 16, 1, 8, '#C9D3E3'); cv.s(25, 25, 26, t2); cv.r(25, 26, 1, 6, DARK); }
   if (o === 'trophee') { cv.r(22, 23, 6, 4, GOLD); cv.p(21, 23, GOLD); cv.p(21, 24, GOLD); cv.p(28, 23, GOLD); cv.p(28, 24, GOLD); cv.r(27, 23, 1, 4, GOLD_D); cv.s(27, 23, 26, GOLD_D); cv.r(24, 28, 2, 2, GOLD_D); cv.s(32, 23, 26, GOLD_D); cv.p(23, 24, '#FFF3B0'); }
   if (o === 'tortue') { cv.s(32, 24, 28, '#0E8A50'); cv.r(23, 33, 7, 2, '#17B26A'); cv.pts([[25, 33], [27, 34], [24, 34]], '#0E8A50'); cv.p(23, 35, '#7BD389'); cv.p(29, 35, '#7BD389'); cv.s(35, 24, 28, '#C9E9A8'); cv.r(30, 32, 2, 2, '#7BD389'); cv.p(31, 32, OUT); }
+  if (o === 'epee_bois' || o === 'epee_acier' || o === 'epee_legende') {
+    const bl = o === 'epee_bois' ? '#C68A4E' : o === 'epee_acier' ? '#E2E8F0' : '#7FE7FF', bd = o === 'epee_bois' ? '#8A5A2B' : o === 'epee_acier' ? '#94A3B8' : '#22D3EE';
+    const gd = o === 'epee_bois' ? '#6E3F19' : o === 'epee_acier' ? '#64748B' : GOLD;
+    cv.r(24, 13, 1, 16, bl); cv.r(25, 13, 1, 16, bd); cv.p(24, 12, bl); cv.s(29, 22, 27, gd); cv.r(24, 30, 2, 3, o === 'epee_legende' ? '#7C3AED' : '#5B3A1E'); cv.r(24, 33, 2, 1, gd);
+    if (o === 'epee_legende') { cv.pts([[22, 15], [27, 18], [22, 22], [27, 25]], '#FFFFFF'); cv.p(24, 20, '#FFFFFF'); }
+  }
+  if (o === 'haltere_or') { cv.r(21, 30, 8, 2, GOLD_D); cv.r(18, 27, 3, 8, GOLD); cv.r(28, 27, 3, 8, GOLD); cv.r(20, 27, 1, 8, GOLD_D); cv.r(30, 27, 1, 8, GOLD_D); cv.p(18, 27, '#FFF3B0'); cv.p(28, 27, '#FFF3B0'); }
+  if (o === 'banane') { cv.m(23, 26, ['.......b', '......yy', '.....yyY', 'yyyyyyY.', 'YyyyyY..', '.YYYY...'], { y: '#FFD43B', Y: '#C99A06', b: '#6E3F19' }); }
+  if (o === 'brocoli') { cv.m(21, 23, ['..gGg.gg.', '.gggGgggg', 'gGgggggGg', 'ggGgggGgg', '.gggGggg.', '...lll...', '...lLl...', '...lll...', '...lll...', '....l....'], { g: '#22C55E', G: '#15803D', l: '#A3E635', L: '#65A30D' }); }
+  if (o === 'frites') { cv.m(22, 27, ['.y.y.y.', '.yyyyy.', 'yyyyyyy', 'rrrrrrr', 'rrwwwrr', 'rrrrrrr', '.rrrrr.', '.rrrrr.'], { y: '#FFD43B', r: '#F04452', w: '#FFFFFF' }); }
   if (o !== 'aucun') { cv.r(23, 30, 3, 2, s); cv.p(25, 31, sD); }
+  const PT = PETS[a.compagnon];
+  if (PT && PT.d) cv.m(1, 32, PT.d, PT.pal);
   return cv.g;
 }
 
 /* Contour automatique + aura */
 const AURA_SHAPES = {
+  flammes: { pal: { y: '#BAE6FD', o: '#38BDF8', r: '#1D4ED8' }, shape: ['.y.', '.yy', 'yoy', 'ooo', 'oro', '.r.'], at: [[1, 32], [3, 25], [0, 18], [27, 32], [26, 24], [28, 17], [5, 33], [24, 33], [5, 10], [24, 8], [2, 3], [27, 1]] },
+  fumee: { pal: { a: '#2A2438', b: '#4B3F63', c: '#6B5B8A' }, shape: ['.bb.', 'baab', 'aaab', '.ac.'], at: [[0, 34], [3, 30], [0, 24], [27, 34], [28, 28], [26, 22], [1, 12], [27, 11], [4, 36], [23, 36], [0, 4], [28, 3]] },
   feu: { pal: { y: '#FFC531', o: '#F97316', r: '#F04452' }, shape: ['.y.', '.yy', 'yoy', 'ooo', '.r.'], at: [[1, 33], [3, 26], [1, 19], [27, 33], [26, 25], [28, 18], [5, 34], [24, 35], [6, 11], [24, 9]] },
   givre: { pal: { c: '#8FD3FF', w: '#FFFFFF' }, shape: ['.c.', 'cwc', '.c.'], at: [[2, 6], [27, 4], [1, 17], [28, 15], [3, 29], [27, 28], [5, 36], [24, 36], [1, 24], [28, 22]] },
   eclairs: { pal: { y: '#FFD84D', o: '#FFB020' }, shape: ['..y', '.y.', 'yyo', '.y.', 'y..'], at: [[2, 9], [27, 7], [1, 25], [28, 23], [4, 33], [26, 33]] },
@@ -1192,6 +1247,15 @@ function finalize(grid, a) {
     const hc = shade(a.color, 0.35), base = out.map(r => r.slice());
     const isO = (x, y) => x >= 0 && x < PW && y >= 0 && y < PH && base[y][x];
     for (let y = 0; y < PH; y++) for (let x = 0; x < PW; x++) if (!base[y][x]) { for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [-1, -1], [1, -1], [-1, 1]]) if (isO(x + dx, y + dy)) { out[y][x] = hc; break; } }
+  } else if (a.aura === 'arcenciel') {
+    const cols = ['#F04452', '#F97316', '#FFC531', '#22C55E', '#2E6CF6', '#8B5CF6'];
+    for (let y = 0; y < 30; y++) for (let x = 0; x < PW; x++) { if (out[y][x]) continue; const d = Math.sqrt((x - 15.5) ** 2 + (y - 27) ** 2); const k = Math.floor(19 - d); if (k >= 0 && k < 6) out[y][x] = cols[k]; }
+  } else if (a.aura === 'aurore') {
+    for (let x = 0; x < PW; x++) { const t1 = Math.round(4 + 2 * Math.sin(x / 3)), t2 = Math.round(13 + 2 * Math.sin(x / 4 + 1)); for (let y = t1; y <= t2; y++) if (!out[y][x]) out[y][x] = y < t1 + 3 ? '#C084FC' : y < t1 + 6 ? '#5EEAD4' : '#34D399'; }
+    [[2, 1], [9, 0], [28, 2], [22, 0], [1, 18], [30, 20]].forEach(([x, y]) => { if (!out[y][x]) out[y][x] = '#FFFFFF'; });
+  } else if (a.aura === 'vitesse') {
+    [[12, 0, 5], [16, 1, 4], [21, 0, 5], [26, 2, 3], [31, 0, 5], [35, 1, 4]].forEach(([y, x0, len]) => { for (let x = x0; x < x0 + len; x++) if (!out[y][x]) out[y][x] = x === x0 + len - 1 ? '#FFFFFF' : '#9FB4D9'; });
+    [[9, 27, 4], [19, 28, 3], [29, 27, 4]].forEach(([y, x0, len]) => { for (let x = x0; x < x0 + len; x++) if (!out[y][x]) out[y][x] = '#9FB4D9'; });
   } else if (AURA_SHAPES[a.aura]) {
     const A = AURA_SHAPES[a.aura];
     A.at.forEach(([x0, y0]) => A.shape.forEach((row, j) => { for (let i = 0; i < row.length; i++) { const x = x0 + i, y = y0 + j, c = A.pal[row[i]]; if (c && x >= 0 && x < PW && y >= 0 && y < PH && !out[y][x]) out[y][x] = c; } }));
@@ -1217,9 +1281,21 @@ function avatarParts(a) {
   AV_CACHE.set(key, s);
   return s;
 }
-const VB = { full: '0 0 32 40', head: '4 0 24 24', face: '7 3 18 18', torso: '3 17 26 18', legs: '5 28 22 12', objet: '9 12 23 28' };
+const VB = { full: '0 0 32 40', head: '4 0 24 24', face: '7 3 18 18', torso: '3 17 26 18', legs: '5 28 22 12', objet: '9 10 23 28', pet: '0 28 13 12', dos: '0 12 32 26' };
 function avatar(a, mode = 'full') {
   return `<svg viewBox="${VB[mode] || VB.full}" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">${avatarParts(a)}</svg>`;
+}
+function petSVG(k) {
+  const PT = PETS[k];
+  if (!PT || !PT.d) return `<svg viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>`;
+  const cv = new PX(); cv.m(1, 1, PT.d, PT.pal);
+  const g = cv.g, filled = (x, y) => x >= 0 && y >= 0 && x < PW && y < PH && g[y][x];
+  let r = '';
+  for (let y = 0; y < 9; y++) for (let x = 0; x < 10; x++) {
+    const c = g[y][x] || ((filled(x - 1, y) || filled(x + 1, y) || filled(x, y - 1) || filled(x, y + 1)) ? OUT : null);
+    if (c) r += `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>`;
+  }
+  return `<svg viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`;
 }
 function headEl(p, cls = '') {
   const a = sanitizeAv(p && p.avatar);
@@ -1301,7 +1377,9 @@ function compute() {
       if (d.state !== 'future' && i >= r.regIdx && i <= Math.min(tIdx, TOTAL - 1)) st.elapsed++;
       if (d.state === 'ok') { (d.e.b || []).forEach(k => { if (k in st.b) st.b[k]++; }); (d.e.m || []).forEach(k => { if (k in st.m) st.m[k]++; }); }
     });
+    st.clean = r.days.filter(d => d.state === 'ok' && d.nm === 0).length;
     r.stats = st;
+    r.recordBeats = exoList(r.p).reduce((n, ex) => { const pr = exoProgress(r.p, ex); if (!pr) return n; let best = null, c = 0; pr.en.forEach(e => { if (best !== null && (ex.better === 'low' ? e.v < best : e.v > best)) c++; if (best === null || (ex.better === 'low' ? e.v < best : e.v > best)) best = e.v; }); return n + c; }, 0);
     r.bestPct = Math.max(0, ...exoList(r.p).map(ex => { const pr = exoProgress(r.p, ex); return pr && pr.en.length >= 2 ? pr.pct : 0; }));
   });
   const byScore = (x, y) => (y.total - x.total) || (y.plus - x.plus) || x.p.name.localeCompare(y.p.name, 'fr');
@@ -1369,22 +1447,40 @@ function editableDates() {
 
 /* Éléments de perso à débloquer */
 const UNLOCKS = [
-  { f: 'aura', k: 'givre', h: '10 points bonus cumulés', ok: r => r.plus >= 10 },
-  { f: 'aura', k: 'feu', h: '30 points bonus cumulés', ok: r => r.plus >= 30 },
-  { f: 'aura', k: 'etoiles', h: '60 points bonus cumulés', ok: r => r.plus >= 60 },
-  { f: 'aura', k: 'halo', h: '100 points bonus cumulés', ok: r => r.plus >= 100 },
-  { f: 'tete', k: 'couronne', h: 'Être roi d’une semaine', ok: r => r.badges.has('king') },
-  { f: 'objet', k: 'trophee', h: 'Une semaine complète sans malus', ok: r => r.badges.has('clean') },
-  { f: 'cou', k: 'medaille', h: '7 jours d’affilée avec du sport', ok: r => r.badges.has('streak7') },
-  { f: 'cou', k: 'chaine', h: '30 journées enregistrées', ok: r => r.entries >= 30 },
-  { f: 'tete', k: 'viking', h: 'Réaliser un gage avec photo preuve', ok: r => r.badges.has('gage') },
-  { f: 'cou', k: 'cape', h: 'Améliorer un record de 10 %', ok: r => r.bestPct >= 0.10 },
-  { f: 'aura', k: 'eclairs', h: 'Améliorer un record de 25 %', ok: r => r.bestPct >= 0.25 },
-  { f: 'tete', k: 'ane', h: '15 points de malus cumulés', ok: r => r.minus >= 15 },
-  { f: 'objet', k: 'tortue', h: 'Finir lanterne rouge d’une semaine', ok: r => r.badges.has('turtle') },
+  { g: 'bonus', f: 'compagnon', k: 'poussin', h: '10 points bonus cumulés', ok: r => r.plus >= 10 },
+  { g: 'bonus', f: 'objet', k: 'banane', h: '20 points bonus cumulés', ok: r => r.plus >= 20 },
+  { g: 'bonus', f: 'compagnon', k: 'chat', h: '35 points bonus cumulés', ok: r => r.plus >= 35 },
+  { g: 'bonus', f: 'aura', k: 'arcenciel', h: '50 points bonus cumulés', ok: r => r.plus >= 50 },
+  { g: 'bonus', f: 'compagnon', k: 'renard', h: '70 points bonus cumulés', ok: r => r.plus >= 70 },
+  { g: 'bonus', f: 'dos', k: 'ailes', h: '90 points bonus cumulés', ok: r => r.plus >= 90 },
+  { g: 'bonus', f: 'aura', k: 'aurore', h: '120 points bonus cumulés', ok: r => r.plus >= 120 },
+  { g: 'bonus', f: 'compagnon', k: 'dragon', h: '150 points bonus cumulés', ok: r => r.plus >= 150 },
+  { g: 'defi', f: 'tete', k: 'laurier', h: 'Être roi d’une semaine', ok: r => r.badges.has('king') },
+  { g: 'defi', f: 'tete', k: 'aureole', h: 'Une semaine complète sans malus', ok: r => r.badges.has('clean') },
+  { g: 'defi', f: 'aura', k: 'flammes', h: '7 jours d’affilée avec du sport', ok: r => r.bestStreak >= 7 },
+  { g: 'defi', f: 'compagnon', k: 'pingouin', h: 'Réaliser un gage avec photo preuve', ok: r => r.badges.has('gage') },
+  { g: 'defi', f: 'compagnon', k: 'chien', h: '30 journées enregistrées', ok: r => r.entries >= 30 },
+  { g: 'defi', f: 'dos', k: 'jetpack', h: '60 journées enregistrées', ok: r => r.entries >= 60 },
+  { g: 'defi', f: 'objet', k: 'haltere_or', h: '20 séances de muscu', ok: r => r.stats.b.muscu >= 20 },
+  { g: 'defi', f: 'aura', k: 'vitesse', h: '20 courses', ok: r => r.stats.b.course >= 20 },
+  { g: 'defi', f: 'objet', k: 'brocoli', h: '15 journées sans aucun malus', ok: r => r.stats.clean >= 15 },
+  { g: 'defi', f: 'tete', k: 'pasteque', h: '30 journées sans aucun malus', ok: r => r.stats.clean >= 30 },
+  { g: 'record', f: 'objet', k: 'epee_bois', h: 'Améliorer un record de 10 %', ok: r => r.bestPct >= 0.10 },
+  { g: 'record', f: 'objet', k: 'epee_acier', h: 'Améliorer un record de 25 %', ok: r => r.bestPct >= 0.25 },
+  { g: 'record', f: 'objet', k: 'epee_legende', h: 'Améliorer un record de 50 %', ok: r => r.bestPct >= 0.50 },
+  { g: 'record', f: 'dos', k: 'cape', h: 'Battre 3 fois un de ses records', ok: r => r.recordBeats >= 3 },
+  { g: 'malus', f: 'objet', k: 'frites', h: '5 repas industriels déclarés', ok: r => r.stats.m.indus >= 5 },
+  { g: 'malus', f: 'tete', k: 'nuit', h: '5 couchers après minuit', ok: r => r.stats.m.minuit >= 5 },
+  { g: 'malus', f: 'compagnon', k: 'paresseux', h: '5 jours à moins de 8 000 pas', ok: r => r.stats.m.pas >= 5 },
+  { g: 'malus', f: 'tete', k: 'ane', h: '15 points de malus cumulés', ok: r => r.minus >= 15 },
+  { g: 'malus', f: 'tete', k: 'cornes', h: '30 points de malus cumulés', ok: r => r.minus >= 30 },
+  { g: 'malus', f: 'aura', k: 'fumee', h: '45 points de malus cumulés', ok: r => r.minus >= 45 },
+  { g: 'malus', f: 'compagnon', k: 'tortue', h: 'Finir lanterne rouge d’une semaine', ok: r => r.badges.has('turtle') },
 ];
+const UNL_GROUPS = [['bonus', 'Avec les points bonus'], ['defi', 'Régularité et défis'], ['record', 'Records battus'], ['malus', 'Côté obscur']];
+const UNL_VIEW = { tete: 'head', objet: 'objet', dos: 'dos', compagnon: 'pet', aura: 'full', cou: 'torso' };
 const LOCKS = new Map(UNLOCKS.map(u => [u.f + ':' + u.k, u]));
-const FIELD_NAME = { aura: 'Aura', tete: 'Tête', objet: 'Objet', cou: 'Cou' };
+const FIELD_NAME = { aura: 'Aura', tete: 'Tête', objet: 'Objet', cou: 'Cou', dos: 'Dos', compagnon: 'Compagnon' };
 const unlockedKeys = r => new Set(r && r.badges ? UNLOCKS.filter(u => u.ok(r)).map(u => u.f + ':' + u.k) : []);
 const lockInfo = (f, k) => LOCKS.get(f + ':' + k);
 const unlockLabel = u => `${FIELD_NAME[u.f]} ${AV_KEYS[u.f][u.k].label}`;
@@ -1820,7 +1916,7 @@ function viewMe() {
   ${kpis(r)}
   ${secTitle('Mes stats')}${statsBlock(r)}
   ${secTitle('À débloquer', `${UNLOCKS.filter(u => r.unl.has(u.f + ':' + u.k)).length}/${UNLOCKS.length}`)}
-  <div class="unl">${UNLOCKS.map(u => { const ok = r.unl.has(u.f + ':' + u.k); return `<div class="ul ${ok ? 'ok' : ''}"><span class="ul-av">${avatar({ ...sanitizeAv(meP().avatar), [u.f]: u.k }, u.f === 'aura' || u.f === 'objet' ? 'full' : u.f === 'cou' ? 'torso' : 'head')}</span><span class="ul-t"><b>${esc(unlockLabel(u))}</b><small>${esc(u.h)}</small></span><span class="ul-s">${ok ? '✅' : '🔒'}</span></div>`; }).join('')}</div>
+  ${UNL_GROUPS.map(([g, title]) => `<div class="ug-t">${title}</div><div class="ugrid">${UNLOCKS.filter(u => u.g === g).map(u => { const ok = r.unl.has(u.f + ':' + u.k); return `<div class="uc ${ok ? 'ok' : ''}"><span class="uc-av ${u.f === 'compagnon' ? 'pet' : ''}">${u.f === 'compagnon' ? petSVG(u.k) : avatar({ ...sanitizeAv(meP().avatar), [u.f]: u.k }, UNL_VIEW[u.f])}</span><b>${esc(AV_KEYS[u.f][u.k].label)}</b><small>${esc(u.h)}</small><i>${ok ? '✅' : '🔒'}</i></div>`; }).join('')}</div>`).join('')}
   ${secTitle('Mes badges', `${r.badges.size}/${BADGES.length}`)}
   <div class="bgrid">${BADGES.map(b => `<div class="badge ${r.badges.has(b.key) ? '' : 'locked'} ${b.shame ? 'shame' : ''}"><span class="e">${b.em}</span><b>${b.name}</b><small>${b.desc}</small></div>`).join('')}</div>
   ${secTitle('Réglages')}
@@ -1902,7 +1998,7 @@ function sheetRules() {
     <p><b>Classement de la semaine</b> : du lundi au dimanche. Un joueur sans aucun point + ni − saisi dans la semaine n’y figure pas. Verdict le mardi à 0h.</p>
     <p><b>Le gage</b> : chaque semaine a son gage fixé à l’avance. La lanterne rouge le réalise avant le dimanche suivant et poste sa photo preuve dans l’app. Égalité : tous les ex aequo y passent.</p>
     ${SPRINT_WEEK ? `<p><b>Sprint final</b> : le ${frShort(CONFIG.SPRINT_FROM)} et le ${frShort(CONFIG.END)}, tous les points comptent double.</p>` : ''}
-    <p><b>Éléments à débloquer</b> : auras, couronne, cape et autres se gagnent avec les points, les gages, les séries et les records (voir Moi).</p>
+    <p><b>Éléments à débloquer</b> : compagnons, épées, ailes, jetpack, fruits et légumes, auras spéciales… se gagnent avec les points, les gages, la régularité, les records et même les malus (voir Moi).</p>
     <p><b>Transparence</b> : en touchant un joueur, tout le monde voit le détail de ses journées et ses stats.</p>
     <p><b>Honnêteté</b> : tout est déclaratif. Le challenge ne vaut que si tout le monde joue le jeu.</p></div>`);
 }
@@ -1948,11 +2044,11 @@ function swatches(field, colors) {
 function optTiles(field, keys, map, mode) {
   return `<div class="opts">${keys.map(k => {
     const lk = isLocked(field, k), L = lk && lockInfo(field, k);
-    return `<button class="opt ${S.ed.av[field] === k ? 'on' : ''} ${lk ? 'locked' : ''}" data-act="${lk ? 'ed-locked' : 'ed-set'}" data-f="${field}" data-v="${k}"${lk ? ` data-h="${esc(L.h)}"` : ''}>${avatar({ ...S.ed.av, [field]: k }, mode)}<span>${map[k].label}</span>${lk ? '<i class="lk">🔒</i>' : ''}</button>`;
+    return `<button class="opt ${S.ed.av[field] === k ? 'on' : ''} ${lk ? 'locked' : ''}" data-act="${lk ? 'ed-locked' : 'ed-set'}" data-f="${field}" data-v="${k}"${lk ? ` data-h="${esc(L.h)}"` : ''}>${(mode === 'pet' ? petSVG(k) : avatar({ ...S.ed.av, [field]: k }, mode))}<span>${map[k].label}</span>${lk ? '<i class="lk">🔒</i>' : ''}</button>`;
   }).join('')}</div>`;
 }
 
-const ED_TABS = [['corps', 'Corps'], ['visage', 'Visage'], ['cheveux', 'Cheveux'], ['tenue', 'Tenue'], ['equip', 'Équipement'], ['aura', 'Aura']];
+const ED_TABS = [['corps', 'Corps'], ['visage', 'Visage'], ['cheveux', 'Cheveux'], ['tenue', 'Tenue'], ['tete', 'Tête'], ['main', 'Main'], ['dos', 'Dos et cou'], ['compagnon', 'Compagnon'], ['aura', 'Aura']];
 function edOpts() {
   const a = S.ed.av, K = m => Object.keys(m), L = (t, sub) => `<div class="opt-l">${t}${sub ? ` <small>${sub}</small>` : ''}</div>`;
   switch (S.ed.tab) {
@@ -1964,10 +2060,12 @@ function edOpts() {
       + L('Couleur secondaire', 'motif, liserés, ceinture') + swatches('topC2', CLOTH) + L('Motif') + optTiles('motif', K(MOTIFS), MOTIFS, 'torso')
       + L('Bas') + optTiles('bas', K(BAS), BAS, 'legs') + L('Couleur du bas') + swatches('pantsC', CLOTH)
       + L('Chaussures') + optTiles('shoes', K(SHOES), SHOES, 'legs') + L('Couleur des chaussures') + swatches('shoesC', CLOTH);
-    case 'equip': return L('Sur la tête') + optTiles('tete', K(TETES), TETES, 'head') + L('Couleur') + swatches('teteC', CLOTH)
-      + L('Autour du cou') + optTiles('cou', K(COUS), COUS, 'torso') + L('Couleur') + swatches('couC', CLOTH)
-      + L('Dans la main') + optTiles('objet', K(OBJETS), OBJETS, 'objet');
-    case 'aura': return L('Aura', 'effet autour de ton perso') + optTiles('aura', K(AURAS), AURAS, 'full');
+    case 'tete': return L('Sur la tête', '🔒 = à débloquer') + optTiles('tete', K(TETES), TETES, 'head') + L('Couleur') + swatches('teteC', CLOTH);
+    case 'main': return L('Dans la main', '🔒 = à débloquer') + optTiles('objet', K(OBJETS), OBJETS, 'objet');
+    case 'dos': return L('Autour du cou') + optTiles('cou', K(COUS), COUS, 'torso') + L('Couleur') + swatches('couC', CLOTH)
+      + L('Dans le dos', '🔒 = à débloquer') + optTiles('dos', K(DOS), DOS, 'dos') + L('Couleur', 'cape et jetpack') + swatches('dosC', CLOTH);
+    case 'compagnon': return L('Ton compagnon', '🔒 = à débloquer') + optTiles('compagnon', K(PETS), PETS, 'pet');
+    case 'aura': return L('Aura', '🔒 = à débloquer') + optTiles('aura', K(AURAS), AURAS, 'full');
     default: return L('Silhouette') + `<div class="seg"><button class="${a.g === 'h' ? 'on' : ''}" data-act="ed-set" data-f="g" data-v="h">Homme</button><button class="${a.g === 'f' ? 'on' : ''}" data-act="ed-set" data-f="g" data-v="f">Femme</button></div>`
       + L('Peau') + swatches('skin', SKINS) + L('Ta couleur', 'classement et graphiques') + swatches('color', PCOL);
   }
